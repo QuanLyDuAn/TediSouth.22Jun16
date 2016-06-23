@@ -98,7 +98,11 @@ namespace TediSouth
             rbthongke.Visible = true;
             tbID.EditValue = MaNV;
             lbID.Caption = MaNV;
-            
+            lbHoTen.Caption = null;
+            lbDonVi.Caption = null;
+            lbChucVu.Caption = null;
+
+
         }
 
         public void NhanVien()
@@ -203,6 +207,10 @@ namespace TediSouth
             {
                 foreach (Form f in this.MdiChildren)
                     f.Close();
+                lbHoTen.Caption ="...";
+                lbDonVi.Caption = "...";
+                lbID.Caption = "...";
+                lbChucVu.Caption = "...";
                 MacDinh();
             }
         }
