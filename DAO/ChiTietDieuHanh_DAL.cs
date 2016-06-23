@@ -90,5 +90,10 @@ namespace DAL
             string sTruyVan = "Select * from Chi_Tiet_Dieu_Hanh";
             return TaoBang(sTruyVan);
         }
+        public static DataTable LoadCTDH_ID(string ID)
+        {
+            string sTruyVan = string.Format("Select * from Chi_Tiet_Dieu_Hanh where QDDieuHanh=N'{0}'",ID);
+            return TaoBang(sTruyVan);
+        }
     }
 }

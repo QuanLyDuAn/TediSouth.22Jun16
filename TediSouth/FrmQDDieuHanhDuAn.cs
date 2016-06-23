@@ -257,6 +257,9 @@ namespace TediSouth
                     linkFile.Text = "No File Select.";
                 }
                 linkFile.Text = dr.Cells["NoiDungDieuHanh"].Value.ToString();
+
+                DataTable tam = ChiTietDieuHanh_BUS.LoadCTDH_ID(dr.Cells["QDDieuHanh"].Value.ToString());
+                dgvNV.DataSource = tam;
             }
             catch (Exception ex)
             {

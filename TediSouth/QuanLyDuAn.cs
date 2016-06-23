@@ -67,6 +67,7 @@ namespace TediSouth
             rbnoibo.Visible = false;
             rbduan.Visible = false;
             rbthongke.Visible = false;
+            tim.Enabled = false;
         }
 
         public void Admin()
@@ -101,7 +102,7 @@ namespace TediSouth
             lbHoTen.Caption = null;
             lbDonVi.Caption = null;
             lbChucVu.Caption = null;
-
+            tim.Enabled = true;
 
         }
 
@@ -132,6 +133,7 @@ namespace TediSouth
             rbnoibo.Visible = false;
             rbduan.Visible = true;
             rbthongke.Visible = false;
+            tim.Enabled = false;
         }
 
         public void GiamDoc()
@@ -162,6 +164,7 @@ namespace TediSouth
             rbduan.Visible = true;
             rbthongke.Visible = true;
             tbID.EditValue = MaNV;
+            tim.Enabled = true;
             DataTable dt = new DataTable();
             dt = DBConnect.TaoBang("select a.IDNhanVien,HoTen,TenDonVi,TenChucVu  from NhanVien a, DonVi b, QuyetDinhCongViec c, ChucVu d where a.MaDonVi=b.MaDonVi and a.IDNhanVien=c.IDNhanVien and c.MaChucVu=d.MaChucVu and a.IDNhanVien='"+MaNV+"'");
             try
@@ -548,9 +551,6 @@ namespace TediSouth
         #endregion
 
         #region Tab 4
-
-        #endregion
-
         private void click_LocNam(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (DAL.DBConnect.kiemtraketnoi() == false)
@@ -589,5 +589,27 @@ namespace TediSouth
                 barEditItem4.EditValue = null;
             }
         }
+
+        private void click_ThongTin(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            if (DAL.DBConnect.kiemtraketnoi() == false)
+            {
+                MessageBox.Show("Không Thể Kết Nối DATA.", "Thông Báo");
+            }
+            else
+            {
+                if (KiemTra("Thông Tin Dự Án") == false)
+                {
+                    foreach (Form f in this.MdiChildren)
+                        f.Close();
+                    FrmTongQuatDuAn dn = new FrmTongQuatDuAn();
+                    dn.Name = "Thông Tin Dự Án";
+                    dn.MdiParent = this;
+                    dn.Show();
+                }
+            }
+        }
+        #endregion
     }
 }

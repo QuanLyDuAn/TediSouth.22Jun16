@@ -15,6 +15,10 @@ namespace BUS
         {
             return ChiTietDieuHanh_DAL.LoadCTDH();
         }
+        public static DataTable LoadCTDH_ID(string ID)
+        {
+            return ChiTietDieuHanh_DAL.LoadCTDH_ID(ID);
+        }
         public static bool Insert(Chi_Tiet_Dieu_Hanh bp)
         {
             return ChiTietDieuHanh_DAL.Insert(bp);
