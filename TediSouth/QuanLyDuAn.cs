@@ -420,7 +420,7 @@ namespace TediSouth
                     FrmLinhVuc dn = new FrmLinhVuc();
                     dn.Name = "Lĩnh Vực";
                     //dn.MdiParent = this;
-                    dn.ShowDialog();
+                    dn.Show();
                 }
             }
         }
@@ -460,7 +460,7 @@ namespace TediSouth
                     FrmBoPhan dn = new FrmBoPhan();
                     dn.Name = "Bộ Phận";
                     //dn.MdiParent = this;
-                    dn.ShowDialog();
+                    dn.Show();
                 }
             }
         }
@@ -480,7 +480,7 @@ namespace TediSouth
                     FrmChucVu dn = new FrmChucVu();
                     dn.Name = "Chức Vụ";
                     //dn.MdiParent = this;
-                    dn.ShowDialog();
+                    dn.Show();
                 }
             }
         }

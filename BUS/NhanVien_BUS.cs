@@ -42,5 +42,13 @@ namespace BUS
         {
             return NhanVien_DAL.LoadBPTheoDV(MaDV);
         }
+        public static DataTable LoadTimKiemTheoID(string ID,string sTimKiem)
+        {
+            return NhanVien_DAL.LoadTimKiemTheoID(ID,sTimKiem);
+        }
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            return NhanVien_DAL.LoadTimKiemAdmin(sTimKiem);
+        }
     }
 }

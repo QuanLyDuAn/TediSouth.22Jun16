@@ -120,11 +120,13 @@
             // 
             this.tbTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTimKiem.Location = new System.Drawing.Point(105, 27);
+            this.tbTimKiem.Location = new System.Drawing.Point(56, 27);
             this.tbTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.tbTimKiem.Name = "tbTimKiem";
-            this.tbTimKiem.Size = new System.Drawing.Size(319, 26);
+            this.tbTimKiem.Size = new System.Drawing.Size(410, 26);
             this.tbTimKiem.TabIndex = 11;
+            this.tbTimKiem.Text = "Nhập ID hoặc tên nhân viên để tìm kiếm...";
+            this.tbTimKiem.Click += new System.EventHandler(this.tbTimKiem_Click);
             // 
             // groupBox1
             // 
@@ -149,13 +151,14 @@
             this.btnTimKiem.Appearance.Options.UseFont = true;
             this.btnTimKiem.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
-            this.btnTimKiem.Location = new System.Drawing.Point(187, 61);
+            this.btnTimKiem.Location = new System.Drawing.Point(180, 77);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(156, 42);
             this.btnTimKiem.TabIndex = 16;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.ToolTip = "(none)";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // tbEmail
             // 

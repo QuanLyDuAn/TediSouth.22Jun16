@@ -25,7 +25,7 @@ namespace TediSouth
         public FrmNhanVien()
         {
             InitializeComponent();
-            
+
         }
         private void FrmNhanVien_Load(object sender, EventArgs e)
         {
@@ -42,9 +42,8 @@ namespace TediSouth
             tbmanv.Clear();
             tbSDT.Clear();
             tbSDT.Clear();
-            tbTimKiem.Clear();
+            tbTimKiem.Text= "Nhập ID hoặc tên nhân viên để tìm kiếm...";
             pbHinhAnh.Image = null;
-
         }
         public void LoadDGV()
         {
@@ -79,12 +78,12 @@ namespace TediSouth
             }
             else
             {
-                cbdonvi.DataSource = DBConnect.TaoBang("select * from DonVi where MaDonVi=(select MaDonVi from NhanVien where IDNhanVien='"+ID+"')");
-                cbdonvi.Enabled = false;    
+                cbdonvi.DataSource = DBConnect.TaoBang("select * from DonVi where MaDonVi=(select MaDonVi from NhanVien where IDNhanVien='" + ID + "')");
+                cbdonvi.Enabled = false;
             }
             cbdonvi.DisplayMember = "TenDonVi";
             cbdonvi.ValueMember = "MaDonVi";
-            
+
         }
         public void LoadBoPhan(string ma)
         {
@@ -142,7 +141,7 @@ namespace TediSouth
         }
         private void click_Update(object sender, EventArgs e)
         {
-            if (tbEmail.Text == "" || tbDiaChi.Text == "" || tbhoten.Text == "" || tbmanv.Text == "" || tbSDT.Text == "" )
+            if (tbEmail.Text == "" || tbDiaChi.Text == "" || tbhoten.Text == "" || tbmanv.Text == "" || tbSDT.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu", "Thông báo");
                 return;
@@ -156,7 +155,7 @@ namespace TediSouth
             nv.Email = tbDiaChi.Text;
             nv.DienThoaiNhanVien = tbSDT.Text;
             nv.DiaChi = tbEmail.Text;
-           
+
             if (txtHinhAnhPath.Text == "")
             {
                 if (NhanVien_BUS.Update(nv) == true)
@@ -282,6 +281,31 @@ namespace TediSouth
             fm.ShowDialog();
         }
 
-        
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            if (ID == "admin")
+            {
+                dt = NhanVien_BUS.LoadTimKiemAdmin(tbTimKiem.Text);
+            }
+            else
+            {
+                dt = NhanVien_BUS.LoadTimKiemTheoID(ID, tbTimKiem.Text);
+            }
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Không Có Nhân Viên Cần Tìm", "Thông Báo");
+            }
+            else
+            {
+                dgvNhanVien.DataSource = dt;
+            }
+
+        }
+
+        private void tbTimKiem_Click(object sender, EventArgs e)
+        {
+            tbTimKiem.Clear();
+        }
     }
 }
