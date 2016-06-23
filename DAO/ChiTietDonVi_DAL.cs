@@ -89,5 +89,10 @@ namespace DAL
             string sTruyVan = "Select * from ChiTietDonVi";
             return TaoBang(sTruyVan);
         }
+        public static DataTable LoadCTDV_ID(string MaDV)
+        {
+            string sTruyVan =string.Format("select * from ChiTietDonVi where MaDonVi ='{0}'", MaDV);
+            return TaoBang(sTruyVan);
+        }
     }
 }

@@ -15,6 +15,10 @@ namespace BUS
         {
             return ChiTietDonVi_DAL.LoadCTDV();
         }
+        public static DataTable LoadCTDV_ID(string MaDV)
+        {
+            return ChiTietDonVi_DAL.LoadCTDV_ID(MaDV);
+        }
         public static bool Insert(ChiTietDonVi bp)
         {
             return ChiTietDonVi_DAL.Insert(bp);

@@ -407,12 +407,12 @@ namespace TediSouth
             {
                 if (KiemTra("Lĩnh Vực") == false)
                 {
-                    foreach (Form f in this.MdiChildren)
-                        f.Close();
+                    //foreach (Form f in this.MdiChildren)
+                    //    f.Close();
                     FrmLinhVuc dn = new FrmLinhVuc();
                     dn.Name = "Lĩnh Vực";
-                    dn.MdiParent = this;
-                    dn.Show();
+                    //dn.MdiParent = this;
+                    dn.ShowDialog();
                 }
             }
         }
@@ -447,12 +447,12 @@ namespace TediSouth
             {
                 if (KiemTra("Bộ Phận") == false)
                 {
-                    foreach (Form f in this.MdiChildren)
-                        f.Close();
+                    //foreach (Form f in this.MdiChildren)
+                    //    f.Close();
                     FrmBoPhan dn = new FrmBoPhan();
                     dn.Name = "Bộ Phận";
-                    dn.MdiParent = this;
-                    dn.Show();
+                    //dn.MdiParent = this;
+                    dn.ShowDialog();
                 }
             }
         }
@@ -467,12 +467,12 @@ namespace TediSouth
             {
                 if (KiemTra("Chức Vụ") == false)
                 {
-                    foreach (Form f in this.MdiChildren)
-                        f.Close();
+                    //foreach (Form f in this.MdiChildren)
+                    //    f.Close();
                     FrmChucVu dn = new FrmChucVu();
                     dn.Name = "Chức Vụ";
-                    dn.MdiParent = this;
-                    dn.Show();
+                    //dn.MdiParent = this;
+                    dn.ShowDialog();
                 }
             }
         }
@@ -581,6 +581,5 @@ namespace TediSouth
                 barEditItem4.EditValue = null;
             }
         }
-        
     }
 }

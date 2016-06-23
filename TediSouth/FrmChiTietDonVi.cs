@@ -15,12 +15,19 @@ namespace TediSouth
 {
     public partial class FrmChiTietDonVi : Form
     {
+        public delegate void Send(string ID);
+        public Send Sender;
+        static string MaDV;
         DataTable dt = new DataTable();
         public FrmChiTietDonVi()
         {
             InitializeComponent();
-            LoadDGV();
-            LoadDonVi();
+            Sender = new Send(LayMaDV);
+
+        }
+        private void LayMaDV(string ID)
+        {
+            MaDV = ID;
         }
         public void Reload()
         {
@@ -29,7 +36,7 @@ namespace TediSouth
         public void LoadDGV()
         {
             dt = new DataTable();
-            dt = ChiTietDonVi_BUS.LoadCTDV();
+            dt = ChiTietDonVi_BUS.LoadCTDV_ID(MaDV);
             dgvCTDV.DataSource = dt;
 
             dgvCTDV.Columns["MaDonVi"].HeaderText = "Đơn Vị";
@@ -38,41 +45,62 @@ namespace TediSouth
 
         public void LoadDonVi()
         {
-            cbMaBP.DataSource = DBConnect.TaoBang("select * from DonVi");
-            cbMaBP.DisplayMember ="MaDonVi";
-            cbMaBP.ValueMember = "MaDonVi";
+            cbMaBP.DataSource = DBConnect.TaoBang("select * from BoPhan");
+            cbMaBP.DisplayMember ="TenBoPhan";
+            cbMaBP.ValueMember = "MaBoPhan";
         }
 
         private void click_Add(object sender, EventArgs e)
         {
-            if (tbMaDV.Text == "")
+            //if (tbMaDV.Text == "")
+            //{
+            //    MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu", "Thông báo");
+            //    return;
+            //}
+            //else
+            //{
+            //    ChiTietDonVi bp = new ChiTietDonVi();
+            //    bp.MaDonVi = MaDV;
+            //    bp.MaBoPhan = cbMaBP.SelectedValue.ToString();
+            //    if (DonVi_BUS.KiemTra(tbMaDV.Text) == true)
+            //    {
+            //        MessageBox.Show("Đơn vị này chưa có trong hệ thống", "Thông Báo");
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        if (ChiTietDonVi_BUS.KiemTra(tbMaDV.Text, cbMaBP.SelectedValue.ToString()) == false)
+            //        {
+            //            ChiTietDonVi_BUS.Insert(bp);
+            //            MessageBox.Show("Thêm Thành Công", "Thông Báo");
+            //            LoadDGV();
+            //            Reload();
+            //            return;
+            //        }
+            //        else
+            //            MessageBox.Show("Trùng lắp dữ liệu", "Thông Báo");
+            //    }
+            //}
+            ChiTietDonVi bp = new ChiTietDonVi();
+            bp.MaDonVi = MaDV.ToString();
+            bp.MaBoPhan = cbMaBP.SelectedValue.ToString();
+            if (DonVi_BUS.KiemTra(tbMaDV.Text) == true)
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu", "Thông báo");
+                MessageBox.Show("Đơn vị này chưa có trong hệ thống", "Thông Báo");
                 return;
             }
             else
             {
-                ChiTietDonVi bp = new ChiTietDonVi();
-                bp.MaDonVi = tbMaDV.Text;
-                bp.MaBoPhan = cbMaBP.SelectedValue.ToString();
-                if (DonVi_BUS.KiemTra(tbMaDV.Text) == true)
+                if (ChiTietDonVi_BUS.KiemTra(MaDV.ToString(), cbMaBP.SelectedValue.ToString()) == false)
                 {
-                    MessageBox.Show("Đơn vị này chưa có trong hệ thống", "Thông Báo");
+                    ChiTietDonVi_BUS.Insert(bp);
+                    MessageBox.Show("Thêm Thành Công", "Thông Báo");
+                    LoadDGV();
+                    Reload();
                     return;
                 }
                 else
-                {
-                    if (ChiTietDonVi_BUS.KiemTra(tbMaDV.Text, cbMaBP.SelectedValue.ToString()) == false)
-                    {
-                        ChiTietDonVi_BUS.Insert(bp);
-                        MessageBox.Show("Thêm Thành Công", "Thông Báo");
-                        LoadDGV();
-                        Reload();
-                        return;
-                    }
-                    else
-                        MessageBox.Show("Trùng lắp dữ liệu", "Thông Báo");
-                }
+                    MessageBox.Show("Trùng lắp dữ liệu", "Thông Báo");
             }
         }
 
@@ -135,6 +163,13 @@ namespace TediSouth
             {
 
             }
+        }
+
+        private void FrmChiTietDonVi_Load(object sender, EventArgs e)
+        {
+            LoadDGV();
+            LoadDonVi();
+            
         }
     }
 }

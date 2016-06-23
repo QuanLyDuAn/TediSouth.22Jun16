@@ -31,9 +31,11 @@ namespace TediSouth
             dt = new DataTable();
             dt = BoPhan_BUS.LoadBoPhan();
             dgvBoPhan.DataSource = dt;
-
             dgvBoPhan.Columns["MaBoPhan"].HeaderText = "Bộ Phận";
             dgvBoPhan.Columns["TenBoPhan"].HeaderText = "Tên Bộ Phận";
+            //dgvBoPhan.ColumnHeadersDefaultCellStyle.ForeColor = Color.Red;
+            //dgvBoPhan.ColumnHeadersDefaultCellStyle.BackColor = Color.DeepSkyBlue;
+            //dgvBoPhan.EnableHeadersVisualStyles = false;
         }
 
         private void click_Update(object sender, EventArgs e)

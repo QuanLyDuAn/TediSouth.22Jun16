@@ -95,5 +95,12 @@ namespace TediSouth
             }
                
         }
+
+        private void Click_Thoat(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        
+
     }
 }

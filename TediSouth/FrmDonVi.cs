@@ -20,6 +20,8 @@ namespace TediSouth
         SqlDataAdapter da = new SqlDataAdapter();
         public static string chuoiKetNoi = "Data Source=./;Initial Catalog=QLDA_TediSouth;Integrated Security=True";
         SqlConnection con = new SqlConnection(chuoiKetNoi);
+        public static string IDDV;
+
         public FrmDonVi()
         {
             InitializeComponent();
@@ -153,17 +155,19 @@ namespace TediSouth
 
         private void click_PhongBan(object sender, EventArgs e)
         {
-            if(tbMaDV.Text=="")
+            if (tbMaDV.Text == "")
+                MessageBox.Show("Chưa chọn đơn vị", "Thông Báo");
+            else
             {
+                IDDV = tbMaDV.Text;
                 FrmChiTietDonVi fm = new FrmChiTietDonVi();
-                fm.ShowDialog();
+                fm.Sender(IDDV);
+                fm.Show();
             }
-
         }
 
         private void click_cell(object sender, DataGridViewCellEventArgs e)
         {
-
             try
             {
                 DataGridViewRow dr = dgvDV.SelectedRows[0];
