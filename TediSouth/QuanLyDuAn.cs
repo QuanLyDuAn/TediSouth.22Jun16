@@ -62,7 +62,8 @@ namespace TediSouth
             bttaikhoan.Enabled = false;
             btnhanvien.Enabled = false;
             btcongviec.Enabled = false;
-
+            btDoiPass.Enabled = false;
+            btnPhuLuc.Enabled = false;
             rbtrangchu.Visible = true;
             rbnoibo.Visible = false;
             rbduan.Visible = false;
@@ -103,7 +104,8 @@ namespace TediSouth
             lbDonVi.Caption = null;
             lbChucVu.Caption = null;
             tim.Enabled = true;
-
+            btnPhuLuc.Enabled = true;
+            btDoiPass.Enabled = false;
         }
 
         public void NhanVien()
@@ -128,12 +130,13 @@ namespace TediSouth
             bttaikhoan.Enabled = false;
             btnhanvien.Enabled = false;
             btcongviec.Enabled = false;
-
+            btDoiPass.Enabled = true;
             rbtrangchu.Visible = true;
             rbnoibo.Visible = false;
             rbduan.Visible = true;
             rbthongke.Visible = false;
             tim.Enabled = false;
+            btnPhuLuc.Enabled = false;
         }
 
         public void GiamDoc()
@@ -158,13 +161,14 @@ namespace TediSouth
             bttaikhoan.Enabled = false;
             btnhanvien.Enabled = true;
             btcongviec.Enabled = true;
-            
+            btDoiPass.Enabled = true;
             rbtrangchu.Visible = true;
             rbnoibo.Visible = true;
             rbduan.Visible = true;
             rbthongke.Visible = true;
             tbID.EditValue = MaNV;
             tim.Enabled = true;
+            btnPhuLuc.Enabled = true;
             DataTable dt = new DataTable();
             dt = DBConnect.TaoBang("select a.IDNhanVien,HoTen,TenDonVi,TenChucVu  from NhanVien a, DonVi b, QuyetDinhCongViec c, ChucVu d where a.MaDonVi=b.MaDonVi and a.IDNhanVien=c.IDNhanVien and c.MaChucVu=d.MaChucVu and a.IDNhanVien='"+MaNV+"'");
             try
@@ -175,16 +179,32 @@ namespace TediSouth
                 lbDonVi.Caption = "Đơn Vị: " + dr["TenDonVi"].ToString();
                 lbChucVu.Caption = "Chức Vụ: " + dr["TenChucVu"].ToString();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-               MessageBox.Show( ex.Message);
-            }
-            
-            
-            
+                MessageBox.Show(ex.Message);
+            }          
         }
 
         #region Tab 1
+        private void click_DoiPass(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (DAL.DBConnect.kiemtraketnoi() == false)
+            {
+                MessageBox.Show("Không Thể Kết Nối DATA.", "Thông Báo");
+            }
+            else
+            {
+                if (KiemTra("Đổi Mật Khẩu") == false)
+                {
+                    foreach (Form f in this.MdiChildren)
+                        f.Close();
+                    Frm_DoiPass dn = new Frm_DoiPass();
+                    dn.Name = "Đổi Mật Khẩu";
+                    dn.Sender(MaNV);
+                    dn.Show();
+                }
+            }
+        }
         private void click_DangNhap(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (DAL.DBConnect.kiemtraketnoi() == false)
@@ -275,6 +295,25 @@ namespace TediSouth
                         f.Close();
                     FrmDuAn dn = new FrmDuAn();
                     dn.Name = "Dự Án";
+                    dn.MdiParent = this;
+                    dn.Show();
+                }
+            }
+        }
+        private void click_PhuLuc(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (DAL.DBConnect.kiemtraketnoi() == false)
+            {
+                MessageBox.Show("Không Thể Kết Nối DATA.", "Thông Báo");
+            }
+            else
+            {
+                if (KiemTra("Phụ Lục Hợp Đồng") == false)
+                {
+                    foreach (Form f in this.MdiChildren)
+                        f.Close();
+                    FrmPhuLuc dn = new FrmPhuLuc();
+                    dn.Name = "Phụ Lục Hợp Đồng";
                     dn.MdiParent = this;
                     dn.Show();
                 }
@@ -610,6 +649,9 @@ namespace TediSouth
                 }
             }
         }
+
         #endregion
+
+
     }
 }

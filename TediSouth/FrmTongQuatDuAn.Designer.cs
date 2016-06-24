@@ -57,6 +57,7 @@
             this.tbDuAn.TabIndex = 57;
             this.tbDuAn.Text = "Nhập tên dự án........";
             this.tbDuAn.Click += new System.EventHandler(this.tbclick);
+            this.tbDuAn.TextChanged += new System.EventHandler(this.tbDuAn_TextChanged);
             // 
             // label2
             // 

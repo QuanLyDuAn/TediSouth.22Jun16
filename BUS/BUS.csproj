@@ -54,6 +54,7 @@
     <Compile Include="LinhVuc_BUS.cs" />
     <Compile Include="NhanVien_BUS.cs" />
     <Compile Include="PhieuGiaoSanPham_BUS.cs" />
+    <Compile Include="PhuLuc_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QDDieuHanhDuAn_BUS.cs" />
     <Compile Include="QuyetDinhCongViec_BUS.cs" />

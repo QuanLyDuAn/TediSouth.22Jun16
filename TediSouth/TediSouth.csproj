@@ -83,6 +83,12 @@
     <Compile Include="FrmChucVu.Designer.cs">
       <DependentUpon>FrmChucVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmChucVuNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChucVuNhanVien.Designer.cs">
+      <DependentUpon>FrmChucVuNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCongVan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,12 @@
     <Compile Include="FrmTongQuatDuAn.Designer.cs">
       <DependentUpon>FrmTongQuatDuAn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_DoiPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_DoiPass.Designer.cs">
+      <DependentUpon>Frm_DoiPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyDuAn.cs">
@@ -201,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmChucVu.resx">
       <DependentUpon>FrmChucVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChucVuNhanVien.resx">
+      <DependentUpon>FrmChucVuNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCongVan.resx">
       <DependentUpon>FrmCongVan.cs</DependentUpon>
@@ -238,6 +253,9 @@
     <EmbeddedResource Include="FrmPhieuGiaoSanPham.resx">
       <DependentUpon>FrmPhieuGiaoSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPhuLuc.resx">
+      <DependentUpon>FrmPhuLuc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmQDDieuHanhDuAn.resx">
       <DependentUpon>FrmQDDieuHanhDuAn.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTongQuatDuAn.resx">
       <DependentUpon>FrmTongQuatDuAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_DoiPass.resx">
+      <DependentUpon>Frm_DoiPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
