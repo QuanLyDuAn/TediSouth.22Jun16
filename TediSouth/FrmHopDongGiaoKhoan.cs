@@ -180,8 +180,8 @@ namespace TediSouth
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            LoadDgvHDGK();
             Reload();
+            LoadDgvHDGK();
         }
         private void CoppyFile(string SourceFolder, string DestFolder)
         {
@@ -212,9 +212,11 @@ namespace TediSouth
             cbMaHD.Text = null;
             cbMaDonVi.Text = null;
             tbMaHopDongGiaoKhoan.Clear();
+            tbTimKiem.Text = "Vui lòng nhập thông tin để tìm kiếm...";
             cbMaDuAn.Text = null;
             tbKinhPhi.Clear();
             linkFile.Text = null;
+            
         }
 
         private void cbMaHD_SelectedIndexChanged(object sender, EventArgs e)
@@ -278,6 +280,32 @@ namespace TediSouth
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void tbTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            if (tbTimKiem.Text == "")
+            {
+                dt = null;
+            }
+            else
+            {
+                if (ID == "admin")
+                {
+                    dt = HopDongGiaoKhoan_BUS.LoadTimKiemAdmin(tbTimKiem.Text);
+                }
+                else
+                {
+                    dt = HopDongGiaoKhoan_BUS.LoadTimKiemTheoID(ID, tbTimKiem.Text);
+                }
+                dgvHDGK.DataSource = dt;
+            }
+        }
+
+        private void tbTimKiem_Click(object sender, EventArgs e)
+        {
+            tbTimKiem.Clear();
         }
     }
 }

@@ -15,6 +15,14 @@ namespace BUS
         {
             return HopDongGiaoKhoan_DAL.LoadHDGK();
         }
+        public static DataTable LoadTimKiemTheoID(string ID, string sTimKiem)
+        {
+            return HopDongGiaoKhoan_DAL.LoadTimKiemTheoID(ID, sTimKiem);
+        }
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            return HopDongGiaoKhoan_DAL.LoadTimKiemAdmin(sTimKiem);
+        }
         public static DataTable LoadHDGK_ID(string ID)
         {
             return HopDongGiaoKhoan_DAL.LoadHDGK_ID(ID);

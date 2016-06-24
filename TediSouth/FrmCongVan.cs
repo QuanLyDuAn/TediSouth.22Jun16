@@ -36,7 +36,7 @@ namespace TediSouth
             tbTieuDe.Clear();
             linkFile.Text="No File Select.";
             dtNgayLap.Value = DateTime.Now;
-            tbTimKiem.Clear();
+            tbTimKiem.Text= "Vui lòng nhập thông tin để tìm kiếm...";
         }
         public void LoadLoaiCV()
         {
@@ -260,6 +260,30 @@ namespace TediSouth
             }
         }
 
-        
+        private void tbTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            if (tbTimKiem.Text == "")
+            {
+                dt = null;
+            }
+            else
+            {
+                if (ID == "admin")
+                {
+                    dt = CongVan_BUS.LoadTimKiemAdmin(tbTimKiem.Text);
+                }
+                else
+                {
+                    dt = CongVan_BUS.LoadTimKiemTheoID(ID, tbTimKiem.Text);
+                }
+                dgvCV.DataSource = dt;
+            }
+        }
+
+        private void tbTimKiem_Click(object sender, EventArgs e)
+        {
+            tbTimKiem.Clear();
+        }
     }
 }

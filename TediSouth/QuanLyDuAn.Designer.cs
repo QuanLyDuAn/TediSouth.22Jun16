@@ -82,6 +82,7 @@
             this.lbChucVu = new DevExpress.XtraBars.BarStaticItem();
             this.tim = new DevExpress.XtraBars.BarButtonItem();
             this.btDoiPass = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPhuLuc = new DevExpress.XtraBars.BarButtonItem();
             this.rbtrangchu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -106,7 +107,6 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnPhuLuc = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -173,7 +173,8 @@
             this.btDoiPass,
             this.btnPhuLuc});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 61;
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ribbonControl1.MaxItemId = 64;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbtrangchu,
@@ -187,7 +188,7 @@
             this.repositoryItemDateEdit3,
             this.repositoryItemTextEdit2,
             this.repositoryItemTextEdit3});
-            this.ribbonControl1.Size = new System.Drawing.Size(1064, 145);
+            this.ribbonControl1.Size = new System.Drawing.Size(1241, 183);
             // 
             // btDangNhap
             // 
@@ -609,6 +610,14 @@
             this.btDoiPass.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btDoiPass.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.click_DoiPass);
             // 
+            // btnPhuLuc
+            // 
+            this.btnPhuLuc.Caption = "                Phụ Lục Hợp Đồng";
+            this.btnPhuLuc.Id = 60;
+            this.btnPhuLuc.Name = "btnPhuLuc";
+            this.btnPhuLuc.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnPhuLuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.click_PhuLuc);
+            // 
             // rbtrangchu
             // 
             this.rbtrangchu.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -820,22 +829,15 @@
             this.ribbonPageGroup15.ShowCaptionButton = false;
             this.ribbonPageGroup15.Text = "                                        ";
             // 
-            // btnPhuLuc
-            // 
-            this.btnPhuLuc.Caption = "                Phụ Lục Hợp Đồng";
-            this.btnPhuLuc.Id = 60;
-            this.btnPhuLuc.Name = "btnPhuLuc";
-            this.btnPhuLuc.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnPhuLuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.click_PhuLuc);
-            // 
             // QuanLyDuAn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 498);
+            this.ClientSize = new System.Drawing.Size(1241, 613);
             this.Controls.Add(this.ribbonControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "QuanLyDuAn";
             this.Ribbon = this.ribbonControl1;
             this.Text = "QUẢN LÝ DỰ ÁN";

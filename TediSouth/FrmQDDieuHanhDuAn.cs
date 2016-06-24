@@ -229,6 +229,7 @@ namespace TediSouth
             tbMaQD.Clear();
             cbDuAn.Text = null;
             linkFile.Text = "No File Select.";
+            tbTimKiem.Text = "Vui lòng nhập thông tin để tìm kiếm...";
 
         }
         OpenFileDialog open = new OpenFileDialog();
@@ -392,6 +393,32 @@ namespace TediSouth
                 lbHoTen.Text = dr["HoTen"].ToString();
                 lbChucVu.Text = dr["MaChucVu"].ToString();
             }
+        }
+
+        private void tbTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            if (tbTimKiem.Text == "")
+            {
+                dt = null;
+            }
+            else
+            {
+                if (ID == "admin")
+                {
+                    dt = QDDieuHanhDuAn_BUS.LoadTimKiemAdmin(tbTimKiem.Text);
+                }
+                else
+                {
+                    dt = QDDieuHanhDuAn_BUS.LoadTimKiemTheoID(ID, tbTimKiem.Text);
+                }
+                dgvQDDH.DataSource = dt;
+            }
+        }
+
+        private void tbTimKiem_Click(object sender, EventArgs e)
+        {
+            tbTimKiem.Clear();
         }
     }
 }

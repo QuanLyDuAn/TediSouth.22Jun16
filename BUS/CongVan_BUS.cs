@@ -15,6 +15,14 @@ namespace BUS
         {
             return CongVan_DAL.LoadCV();
         }
+        public static DataTable LoadTimKiemTheoID(string ID, string sTimKiem)
+        {
+            return CongVan_DAL.LoadTimKiemTheoID(ID, sTimKiem);
+        }
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            return CongVan_DAL.LoadTimKiemAdmin(sTimKiem);
+        }
         public static DataTable LoadCV_ID(string ID)
         {
             return CongVan_DAL.LoadCV_ID(ID);

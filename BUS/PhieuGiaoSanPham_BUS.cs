@@ -16,6 +16,14 @@ namespace BUS
         {
             return PhieuGiaoSanPham_DAL.LoadPGSP();
         }
+        public static DataTable LoadTimKiemTheoID(string ID, string sTimKiem)
+        {
+            return PhieuGiaoSanPham_DAL.LoadTimKiemTheoID(ID, sTimKiem);
+        }
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            return PhieuGiaoSanPham_DAL.LoadTimKiemAdmin(sTimKiem);
+        }
         public static DataTable LoadPGSP_ID(string ID)
         {
             return PhieuGiaoSanPham_DAL.LoadPGSP_ID(ID);

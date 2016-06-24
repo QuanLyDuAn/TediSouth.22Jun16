@@ -180,8 +180,8 @@ namespace TediSouth
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            LoadDgvPhieuGiao();
             ReLoad();
+            LoadDgvPhieuGiao();
         }
         private void ReLoad()
         {
@@ -189,6 +189,7 @@ namespace TediSouth
             tbTieuDe.Clear();
             tbSoLuong.Clear();
             LinkFile.Text = "No file select.";
+            tbTimKiem.Text = "Vui lòng nhập thông tin để tìm kiếm...";
         }
         private void cbDuAn_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -282,6 +283,32 @@ namespace TediSouth
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void tbTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            if (tbTimKiem.Text == "")
+            {
+                dt = null;
+            }
+            else
+            {
+                if (ID == "admin")
+                {
+                    dt = PhieuGiaoSanPham_BUS.LoadTimKiemAdmin(tbTimKiem.Text);
+                }
+                else
+                {
+                    dt = PhieuGiaoSanPham_BUS.LoadTimKiemTheoID(ID, tbTimKiem.Text);
+                }
+                dgvPhieuGiao.DataSource = dt;
+            }
+        }
+
+        private void tbTimKiem_Click(object sender, EventArgs e)
+        {
+            tbTimKiem.Clear();
         }
     }
 }

@@ -15,6 +15,14 @@ namespace BUS
         {
             return QDDieuHanhDuAn_DAL.LoadQDDH();
         }
+        public static DataTable LoadTimKiemTheoID(string ID, string sTimKiem)
+        {
+            return QDDieuHanhDuAn_DAL.LoadTimKiemTheoID(ID, sTimKiem);
+        }
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            return QDDieuHanhDuAn_DAL.LoadTimKiemAdmin(sTimKiem);
+        }
         public static DataTable LoadQDDHDA_ID(string ID)
         {
             return QDDieuHanhDuAn_DAL.LoadQDDH_ID(ID);

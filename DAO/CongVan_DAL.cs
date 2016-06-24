@@ -103,5 +103,15 @@ namespace DAL
             string sTruyVan = "select a.* from CongVan a, HopDongGiaoKhoan b where a.MaDuAn=b.MaDuAn  and b.MaDonVi=(select MaDonVi from NhanVien where IDNhanVien='"+ID+"') order by MaDuAn";
             return TaoBang(sTruyVan);
         }
+        public static DataTable LoadTimKiemTheoID(string ID, string sTimKiem)
+        {
+            string sTruyVan = "select a.* from CongVan a,HopDongGiaoKhoan b where (MaCongVan like '%" + sTimKiem + "%' or a.MaDuAn like '%" + sTimKiem + "%' or TieuDe like N'%" + sTimKiem + "%') and MaDonVi=(select MaDonVi from NhanVien where IDNhanVien='" + ID + "') and a.MaDuAn=b.MaDuAn";
+            return TaoBang(sTruyVan);
+        }
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            string sTruyVan = "select * from CongVan where MaCongVan like '%" + sTimKiem + "%' or MaDuAn like '%" + sTimKiem + "%' or TieuDe like N'%" + sTimKiem + "%'";
+            return TaoBang(sTruyVan);
+        }
     }
 }
