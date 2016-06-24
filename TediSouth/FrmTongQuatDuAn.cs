@@ -167,5 +167,13 @@ namespace TediSouth
         {
             AutoTenK();
         }
+
+        private void tbDuAn_TextChanged(object sender, EventArgs e)
+        {
+            AutoTenK();
+            MacDinh();
+            DataTable dt = new DataTable();
+            gird.DataSource = dt;
+        }
     }
 }

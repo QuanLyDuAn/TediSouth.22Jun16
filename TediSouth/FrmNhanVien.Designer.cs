@@ -35,7 +35,6 @@
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.tbTimKiem = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbDiaChi = new System.Windows.Forms.TextBox();
             this.tbSDT = new System.Windows.Forms.TextBox();
@@ -120,18 +119,18 @@
             // 
             this.tbTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTimKiem.Location = new System.Drawing.Point(56, 27);
+            this.tbTimKiem.Location = new System.Drawing.Point(56, 23);
             this.tbTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.tbTimKiem.Name = "tbTimKiem";
             this.tbTimKiem.Size = new System.Drawing.Size(410, 26);
             this.tbTimKiem.TabIndex = 11;
             this.tbTimKiem.Text = "Nhập ID hoặc tên nhân viên để tìm kiếm...";
             this.tbTimKiem.Click += new System.EventHandler(this.tbTimKiem_Click);
+            this.tbTimKiem.TextChanged += new System.EventHandler(this.tbTimKiem_TextChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.Controls.Add(this.btnTimKiem);
             this.groupBox1.Controls.Add(this.tbTimKiem);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Blue;
@@ -139,26 +138,10 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(521, 142);
+            this.groupBox1.Size = new System.Drawing.Size(521, 64);
             this.groupBox1.TabIndex = 110;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTimKiem.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Appearance.Options.UseFont = true;
-            this.btnTimKiem.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
-            this.btnTimKiem.Location = new System.Drawing.Point(180, 77);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(156, 42);
-            this.btnTimKiem.TabIndex = 16;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.ToolTip = "(none)";
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // tbEmail
             // 
@@ -413,7 +396,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(679, 235);
+            this.label10.Location = new System.Drawing.Point(679, 189);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(191, 20);
             this.label10.TabIndex = 121;
@@ -423,7 +406,7 @@
             // 
             this.txtHinhAnhPath.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtHinhAnhPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHinhAnhPath.Location = new System.Drawing.Point(896, 229);
+            this.txtHinhAnhPath.Location = new System.Drawing.Point(877, 183);
             this.txtHinhAnhPath.Margin = new System.Windows.Forms.Padding(4);
             this.txtHinhAnhPath.Name = "txtHinhAnhPath";
             this.txtHinhAnhPath.Size = new System.Drawing.Size(465, 26);
@@ -498,7 +481,6 @@
         private DevExpress.XtraEditors.SimpleButton btnReset;
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private DevExpress.XtraEditors.SimpleButton btnLuu;
-        private DevExpress.XtraEditors.SimpleButton btnTimKiem;
         private System.Windows.Forms.TextBox tbTimKiem;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraEditors.SimpleButton btnThem;

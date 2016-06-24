@@ -111,7 +111,7 @@ namespace TediSouth
             string sourcefolder = linkFile.Text;
             string destfolder = "D:/hồsơtổnghợp/HDDuAn";
             CoppyFile(sourcefolder, destfolder);
-            if (HopDong_BUS.Update(bp) == true)
+            if (PhuLuc_BUS.Update(bp) == true)
             {
                 MessageBox.Show("Cập Nhật Thành Công", "Thông Báo");
                 LoadDGV();
