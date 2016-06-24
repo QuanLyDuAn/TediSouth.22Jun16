@@ -54,6 +54,7 @@
     <Compile Include="LinhVuc.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="PhieuGiaoSanPham.cs" />
+    <Compile Include="PhuLuc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QDDieuHanhDuAn.cs" />
     <Compile Include="QuyetDinhCongViec.cs" />

@@ -277,8 +277,16 @@ namespace TediSouth
 
         private void QDChucVu_Click(object sender, EventArgs e)
         {
-            FrmQuyetDinhCongViec fm = new FrmQuyetDinhCongViec();
-            fm.ShowDialog();
+            if(tbmanv.Text=="")
+            {
+                MessageBox.Show("Chưa chọn nhân viên", "Thông báo");
+            }
+            else
+            { 
+                FrmChucVuNhanVien fm = new FrmChucVuNhanVien();
+                fm.Sender(tbmanv.Text);
+                fm.Show();
+            }
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

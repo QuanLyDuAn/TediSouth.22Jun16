@@ -18,6 +18,7 @@ namespace TediSouth
     public partial class FrmQuyetDinhCongViec : Form
     {
         public string ID;
+
         public FrmQuyetDinhCongViec()
         {
             InitializeComponent();
@@ -94,6 +95,7 @@ namespace TediSouth
                 dtNgayLap.Text = dr.Cells["NgayLap"].Value.ToString();
                 cbMaNV.SelectedValue = dr.Cells["IDNhanVien"].Value.ToString();
                 cbChucVu.SelectedValue = dr.Cells["MaChucVu"].Value.ToString();
+                
             }
             catch (Exception ex)
             {

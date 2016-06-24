@@ -81,6 +81,7 @@
             this.lbDonVi = new DevExpress.XtraBars.BarStaticItem();
             this.lbChucVu = new DevExpress.XtraBars.BarStaticItem();
             this.tim = new DevExpress.XtraBars.BarButtonItem();
+            this.btDoiPass = new DevExpress.XtraBars.BarButtonItem();
             this.rbtrangchu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -105,6 +106,7 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnPhuLuc = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -167,9 +169,11 @@
             this.barStaticItem6,
             this.lbDonVi,
             this.lbChucVu,
-            this.tim});
+            this.tim,
+            this.btDoiPass,
+            this.btnPhuLuc});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 59;
+            this.ribbonControl1.MaxItemId = 61;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbtrangchu,
@@ -596,6 +600,15 @@
             this.tim.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.tim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.click_ThongTin);
             // 
+            // btDoiPass
+            // 
+            this.btDoiPass.Caption = "          Đổi Mật Khẩu";
+            this.btDoiPass.Glyph = ((System.Drawing.Image)(resources.GetObject("btDoiPass.Glyph")));
+            this.btDoiPass.Id = 59;
+            this.btDoiPass.Name = "btDoiPass";
+            this.btDoiPass.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btDoiPass.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.click_DoiPass);
+            // 
             // rbtrangchu
             // 
             this.rbtrangchu.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -647,6 +660,7 @@
             // 
             this.ribbonPageGroup7.AllowTextClipping = false;
             this.ribbonPageGroup7.ItemLinks.Add(this.bthotro);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btDoiPass);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.ShowCaptionButton = false;
             this.ribbonPageGroup7.Text = "                    ";
@@ -693,6 +707,7 @@
             this.ribbonPageGroup11.ItemLinks.Add(this.btdauthau);
             this.ribbonPageGroup11.ItemLinks.Add(this.bthopdong);
             this.ribbonPageGroup11.ItemLinks.Add(this.btgiaokhoan);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnPhuLuc);
             this.ribbonPageGroup11.ItemLinks.Add(this.btdieuhanh);
             this.ribbonPageGroup11.ItemLinks.Add(this.btcongvan);
             this.ribbonPageGroup11.ItemLinks.Add(this.btgiaosp);
@@ -805,6 +820,14 @@
             this.ribbonPageGroup15.ShowCaptionButton = false;
             this.ribbonPageGroup15.Text = "                                        ";
             // 
+            // btnPhuLuc
+            // 
+            this.btnPhuLuc.Caption = "                Phụ Lục Hợp Đồng";
+            this.btnPhuLuc.Id = 60;
+            this.btnPhuLuc.Name = "btnPhuLuc";
+            this.btnPhuLuc.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnPhuLuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.click_PhuLuc);
+            // 
             // QuanLyDuAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -910,5 +933,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
         private DevExpress.XtraBars.BarButtonItem tim;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
+        private DevExpress.XtraBars.BarButtonItem btDoiPass;
+        private DevExpress.XtraBars.BarButtonItem btnPhuLuc;
     }
 }
