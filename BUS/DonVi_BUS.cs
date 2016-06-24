@@ -15,6 +15,10 @@ namespace BUS
         {
             return DonVi_DAL.LoadDV();
         }
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            return DonVi_DAL.LoadTimKiemAdmin(sTimKiem);
+        }
         public static bool Insert(DonVi bp)
         {
             return DonVi_DAL.Insert(bp);

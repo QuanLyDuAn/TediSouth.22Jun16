@@ -37,7 +37,7 @@ namespace TediSouth
             tbNgDD.Clear();
             tbSDT.Clear();
             tbTenCongTy.Clear();
-            tbTimKiem.Clear();
+            tbTimKiem.Text= "Nhập mã hoặc tên đơn vị để tìm kiếm...";
             tbWeb.Clear();
 
         }
@@ -182,8 +182,21 @@ namespace TediSouth
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
+        }
+        private void tbTimKiem_TextChanged(object sender, EventArgs e)
+        {
+
+            DataTable dt = new DataTable();
+            dt = DonVi_BUS.LoadTimKiemAdmin(tbTimKiem.Text);
+            dgvDV.DataSource = dt;
+            
+        }
+
+        private void tbTimKiem_Click(object sender, EventArgs e)
+        {
+            tbTimKiem.Clear();
         }
     }
 }

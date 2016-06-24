@@ -278,10 +278,15 @@ namespace TediSouth
         private void QDChucVu_Click(object sender, EventArgs e)
         {
             FrmQuyetDinhCongViec fm = new FrmQuyetDinhCongViec();
+            fm.ID = ID;
             fm.ShowDialog();
         }
+        private void tbTimKiem_Click(object sender, EventArgs e)
+        {
+            tbTimKiem.Clear();
+        }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        private void tbTimKiem_TextChanged(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
             if (ID == "admin")
@@ -292,20 +297,7 @@ namespace TediSouth
             {
                 dt = NhanVien_BUS.LoadTimKiemTheoID(ID, tbTimKiem.Text);
             }
-            if (dt.Rows.Count == 0)
-            {
-                MessageBox.Show("Không Có Nhân Viên Cần Tìm", "Thông Báo");
-            }
-            else
-            {
-                dgvNhanVien.DataSource = dt;
-            }
-
-        }
-
-        private void tbTimKiem_Click(object sender, EventArgs e)
-        {
-            tbTimKiem.Clear();
+            dgvNhanVien.DataSource = dt;          
         }
     }
 }
