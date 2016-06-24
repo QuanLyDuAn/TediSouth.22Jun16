@@ -15,6 +15,10 @@ namespace BUS
         {
             return DuAn_DAL.LoadDA();
         }
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            return DuAn_DAL.LoadTimKiemAdmin(sTimKiem);
+        }
         public static bool Insert(DuAn bp)
         {
             return DuAn_DAL.Insert(bp);

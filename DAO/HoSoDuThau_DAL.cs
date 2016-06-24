@@ -97,5 +97,15 @@ namespace DAL
             string sTruyVan = "Select a.* from HoSoDuThau a, NhanVien b where a.MaDonVi=b.MaDonVi and IDNhanVien='"+id+"'";
             return TaoBang(sTruyVan);
         }
+        public static DataTable LoadTimKiemTheoID(string ID, string sTimKiem)
+        {
+            string sTruyVan = "select * from HoSoDuThau where  MaDonVi=(select MaDonVi from NhanVien where IDNhanVien='" + ID + "') and  MaDuAn like '%" + sTimKiem + "%' ";
+            return TaoBang(sTruyVan);
+        }
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            string sTruyVan = "select * from HoSoDuThau where MaDuAn like '%" + sTimKiem + "%' or MaDonVi like '%" + sTimKiem + "%'";
+            return TaoBang(sTruyVan);
+        }
     }
 }

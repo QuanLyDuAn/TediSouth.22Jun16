@@ -106,12 +106,12 @@ namespace DAL
         }
         public static DataTable LoadTimKiemTheoID(string ID,string sTimKiem)
         {
-            string sTruyVan = "select * from NhanVien where MaDonVi=(select MaDonVi from NhanVien where IDNhanVien='"+ID+"') and IDNhanVien='"+sTimKiem+ "'or HoTen like N'%"+sTimKiem+"%'";
+            string sTruyVan = "select * from NhanVien where MaDonVi=(select MaDonVi from NhanVien where IDNhanVien='"+ID+"') and (IDNhanVien like'%"+sTimKiem+ "%'or HoTen like N'%"+sTimKiem+"%')";
             return TaoBang(sTruyVan);
         }
         public static DataTable LoadTimKiemAdmin(string sTimKiem)
         {
-            string sTruyVan = "select * from NhanVien where IDNhanVien='" + sTimKiem + "'or HoTen like N'%" + sTimKiem + "%'";
+            string sTruyVan = "select * from NhanVien where IDNhanVien like '%" + sTimKiem + "%'or HoTen like N'%" + sTimKiem + "%'";
             return TaoBang(sTruyVan);
         }
     }

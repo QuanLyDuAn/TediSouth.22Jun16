@@ -33,7 +33,6 @@
             this.tbTimKiem = new System.Windows.Forms.TextBox();
             this.dgvHSDT = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,7 +57,7 @@
             this.dtngaylap.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtngaylap.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtngaylap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtngaylap.Location = new System.Drawing.Point(137, 170);
+            this.dtngaylap.Location = new System.Drawing.Point(250, 170);
             this.dtngaylap.Margin = new System.Windows.Forms.Padding(4);
             this.dtngaylap.Name = "dtngaylap";
             this.dtngaylap.Size = new System.Drawing.Size(250, 22);
@@ -68,12 +67,15 @@
             // 
             this.tbTimKiem.AcceptsReturn = true;
             this.tbTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTimKiem.Location = new System.Drawing.Point(105, 44);
+            this.tbTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTimKiem.Location = new System.Drawing.Point(22, 27);
             this.tbTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.tbTimKiem.Name = "tbTimKiem";
-            this.tbTimKiem.Size = new System.Drawing.Size(256, 26);
+            this.tbTimKiem.Size = new System.Drawing.Size(501, 28);
             this.tbTimKiem.TabIndex = 11;
+            this.tbTimKiem.Text = "Nhập Mã Đơn Vị hoặc Mã Dự Án để tìm...";
+            this.tbTimKiem.Click += new System.EventHandler(this.tbTimKiem_Click);
+            this.tbTimKiem.TextChanged += new System.EventHandler(this.tbTimKiem_TextChanged);
             // 
             // dgvHSDT
             // 
@@ -93,40 +95,24 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.Controls.Add(this.btnTimKiem);
             this.groupBox1.Controls.Add(this.tbTimKiem);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox1.Location = new System.Drawing.Point(916, 91);
+            this.groupBox1.Location = new System.Drawing.Point(768, 74);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(456, 185);
+            this.groupBox1.Size = new System.Drawing.Size(542, 75);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTimKiem.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Appearance.Options.UseFont = true;
-            this.btnTimKiem.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
-            this.btnTimKiem.Location = new System.Drawing.Point(153, 100);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(156, 42);
-            this.btnTimKiem.TabIndex = 16;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.ToolTip = "(none)";
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 170);
+            this.label6.Location = new System.Drawing.Point(125, 170);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 20);
@@ -138,7 +124,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(411, 126);
+            this.label5.Location = new System.Drawing.Point(524, 126);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 20);
@@ -150,7 +136,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(411, 42);
+            this.label4.Location = new System.Drawing.Point(524, 42);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 20);
@@ -162,7 +148,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 80);
+            this.label3.Location = new System.Drawing.Point(154, 80);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 20);
@@ -174,7 +160,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(35, 38);
+            this.label2.Location = new System.Drawing.Point(148, 38);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 20);
@@ -186,7 +172,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 126);
+            this.label1.Location = new System.Drawing.Point(136, 126);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 20);
@@ -197,7 +183,7 @@
             // 
             this.tbMucGia.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbMucGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMucGia.Location = new System.Drawing.Point(137, 123);
+            this.tbMucGia.Location = new System.Drawing.Point(250, 123);
             this.tbMucGia.Margin = new System.Windows.Forms.Padding(4);
             this.tbMucGia.Name = "tbMucGia";
             this.tbMucGia.Size = new System.Drawing.Size(250, 26);
@@ -210,7 +196,7 @@
             this.btnDuyetFile.Appearance.Options.UseFont = true;
             this.btnDuyetFile.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnDuyetFile.Image = ((System.Drawing.Image)(resources.GetObject("btnDuyetFile.Image")));
-            this.btnDuyetFile.Location = new System.Drawing.Point(415, 74);
+            this.btnDuyetFile.Location = new System.Drawing.Point(528, 74);
             this.btnDuyetFile.Margin = new System.Windows.Forms.Padding(4);
             this.btnDuyetFile.Name = "btnDuyetFile";
             this.btnDuyetFile.Size = new System.Drawing.Size(156, 31);
@@ -225,7 +211,7 @@
             this.btnReset.Appearance.Options.UseFont = true;
             this.btnReset.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
-            this.btnReset.Location = new System.Drawing.Point(752, 234);
+            this.btnReset.Location = new System.Drawing.Point(767, 245);
             this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(156, 42);
@@ -240,7 +226,7 @@
             this.btnXoa.Appearance.Options.UseFont = true;
             this.btnXoa.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(525, 234);
+            this.btnXoa.Location = new System.Drawing.Point(540, 245);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(144, 42);
@@ -255,7 +241,7 @@
             this.btnLuu.Appearance.Options.UseFont = true;
             this.btnLuu.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.Location = new System.Drawing.Point(296, 234);
+            this.btnLuu.Location = new System.Drawing.Point(311, 245);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(155, 42);
@@ -272,7 +258,7 @@
             this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnThem.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.Location = new System.Drawing.Point(68, 234);
+            this.btnThem.Location = new System.Drawing.Point(83, 245);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(159, 42);
@@ -285,7 +271,7 @@
             this.LinkFile.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LinkFile.AutoSize = true;
             this.LinkFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LinkFile.Location = new System.Drawing.Point(519, 42);
+            this.LinkFile.Location = new System.Drawing.Point(632, 42);
             this.LinkFile.Name = "LinkFile";
             this.LinkFile.Size = new System.Drawing.Size(111, 20);
             this.LinkFile.TabIndex = 56;
@@ -297,7 +283,7 @@
             // 
             this.cbDonVi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbDonVi.FormattingEnabled = true;
-            this.cbDonVi.Location = new System.Drawing.Point(137, 38);
+            this.cbDonVi.Location = new System.Drawing.Point(250, 38);
             this.cbDonVi.Name = "cbDonVi";
             this.cbDonVi.Size = new System.Drawing.Size(250, 24);
             this.cbDonVi.TabIndex = 1;
@@ -306,7 +292,7 @@
             // 
             this.cbDuAn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbDuAn.FormattingEnabled = true;
-            this.cbDuAn.Location = new System.Drawing.Point(137, 80);
+            this.cbDuAn.Location = new System.Drawing.Point(250, 80);
             this.cbDuAn.Name = "cbDuAn";
             this.cbDuAn.Size = new System.Drawing.Size(250, 24);
             this.cbDuAn.TabIndex = 2;
@@ -350,7 +336,6 @@
 
         private DevExpress.XtraEditors.SimpleButton btnDuyetFile;
         private System.Windows.Forms.DateTimePicker dtngaylap;
-        private DevExpress.XtraEditors.SimpleButton btnTimKiem;
         private System.Windows.Forms.TextBox tbTimKiem;
         private System.Windows.Forms.DataGridView dgvHSDT;
         private DevExpress.XtraEditors.SimpleButton btnReset;

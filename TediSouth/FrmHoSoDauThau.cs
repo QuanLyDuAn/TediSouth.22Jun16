@@ -42,7 +42,7 @@ namespace TediSouth
             dtngaylap.Value = DateTime.Now;
             tbMucGia.Clear();
             LinkFile.Text = "No file select.";
-            tbTimKiem.Clear();
+            tbTimKiem.Text= "Nhập Mã Đơn Vị hoặc Mã Dự Án để tìm...";
         }
         public void LoadDGV()
         {
@@ -318,6 +318,30 @@ namespace TediSouth
             }
         }
 
-        
+        private void tbTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            if (tbTimKiem.Text == "")
+            {
+                dt = null;
+            }
+            else
+            {
+                if (ID == "admin")
+                {
+                    dt = HoSoDuThau_BUS.LoadTimKiemAdmin(tbTimKiem.Text);
+                }
+                else
+                {
+                    dt = HoSoDuThau_BUS.LoadTimKiemTheoID(ID, tbTimKiem.Text);
+                }
+                dgvHSDT.DataSource = dt;
+            }
+        }
+
+        private void tbTimKiem_Click(object sender, EventArgs e)
+        {
+            tbTimKiem.Clear();
+        }
     }
 }

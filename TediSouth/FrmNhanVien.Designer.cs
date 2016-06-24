@@ -118,11 +118,11 @@
             // tbTimKiem
             // 
             this.tbTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTimKiem.Location = new System.Drawing.Point(56, 23);
+            this.tbTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTimKiem.Location = new System.Drawing.Point(37, 23);
             this.tbTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.tbTimKiem.Name = "tbTimKiem";
-            this.tbTimKiem.Size = new System.Drawing.Size(410, 26);
+            this.tbTimKiem.Size = new System.Drawing.Size(465, 28);
             this.tbTimKiem.TabIndex = 11;
             this.tbTimKiem.Text = "Nhập ID hoặc tên nhân viên để tìm kiếm...";
             this.tbTimKiem.Click += new System.EventHandler(this.tbTimKiem_Click);
@@ -406,7 +406,7 @@
             // 
             this.txtHinhAnhPath.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtHinhAnhPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHinhAnhPath.Location = new System.Drawing.Point(877, 183);
+            this.txtHinhAnhPath.Location = new System.Drawing.Point(886, 183);
             this.txtHinhAnhPath.Margin = new System.Windows.Forms.Padding(4);
             this.txtHinhAnhPath.Name = "txtHinhAnhPath";
             this.txtHinhAnhPath.Size = new System.Drawing.Size(465, 26);

@@ -92,6 +92,11 @@ namespace DAL
             string query = "SELECT * FROM KhachHang";
             return TaoBang(query);
         }
-
+        
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            string sTruyVan = "select * from KhachHang where MaKhachHang like '%" + sTimKiem + "%'or TenCongTy like N'%" + sTimKiem + "%'";
+            return TaoBang(sTruyVan);
+        }
     }
 }

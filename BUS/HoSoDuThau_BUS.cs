@@ -37,5 +37,13 @@ namespace BUS
                 return true;
             return false;
         }
+        public static DataTable LoadTimKiemTheoID(string ID, string sTimKiem)
+        {
+            return HoSoDuThau_DAL.LoadTimKiemTheoID(ID, sTimKiem);
+        }
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            return HoSoDuThau_DAL.LoadTimKiemAdmin(sTimKiem);
+        }
     }
 }

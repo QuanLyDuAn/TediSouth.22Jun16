@@ -93,5 +93,10 @@ namespace DAL
             return TaoBang(sTruyVan);
         }
         
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            string sTruyVan = "select * from DuAn where MaDuAn like '%" + sTimKiem + "%'or TenDuAn like N'%" + sTimKiem + "%'";
+            return TaoBang(sTruyVan);
+        }
     }
 }

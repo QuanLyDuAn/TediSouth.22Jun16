@@ -42,7 +42,7 @@ namespace TediSouth
             tbmanv.Clear();
             tbSDT.Clear();
             tbSDT.Clear();
-            tbTimKiem.Text= "Nhập ID hoặc tên nhân viên để tìm kiếm...";
+            tbTimKiem.Text = "Nhập ID hoặc tên nhân viên để tìm kiếm...";
             pbHinhAnh.Image = null;
         }
         public void LoadDGV()
@@ -289,15 +289,23 @@ namespace TediSouth
         private void tbTimKiem_TextChanged(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            if (ID == "admin")
+            if (tbTimKiem.Text == "")
             {
-                dt = NhanVien_BUS.LoadTimKiemAdmin(tbTimKiem.Text);
+                dt = null;
             }
             else
             {
-                dt = NhanVien_BUS.LoadTimKiemTheoID(ID, tbTimKiem.Text);
+                if (ID == "admin")
+                {
+                    dt = NhanVien_BUS.LoadTimKiemAdmin(tbTimKiem.Text);
+                }
+                else
+                {
+                    dt = NhanVien_BUS.LoadTimKiemTheoID(ID, tbTimKiem.Text);
+                }
+                dgvNhanVien.DataSource = dt;
             }
-            dgvNhanVien.DataSource = dt;          
+
         }
     }
 }

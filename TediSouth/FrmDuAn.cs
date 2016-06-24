@@ -37,7 +37,7 @@ namespace TediSouth
             dtNgayLap.Value = DateTime.Now;
             tbThoiGian.Clear();
             tbKinhPhi.Clear();
-            tbTimKiem.Clear();
+            tbTimKiem.Text= "Nhập mã hoặc tên dự án để tìm kiếm...";
         }
         public void LoadDGV()
         {
@@ -162,10 +162,17 @@ namespace TediSouth
 
             }
         }
-
-        private void click_TimKiem(object sender, EventArgs e)
+ 
+        private void tbTimKiem_TextChanged(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            dt = DuAn_BUS.LoadTimKiemAdmin(tbTimKiem.Text);
+            dgvDA.DataSource = dt;
+        }
 
+        private void tbTimKiem_Click(object sender, EventArgs e)
+        {
+            tbTimKiem.Clear();
         }
     }
 }

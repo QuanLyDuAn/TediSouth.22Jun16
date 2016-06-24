@@ -15,6 +15,10 @@ namespace BUS
         {
             return HopDong_DAL.LoadHD();
         }
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            return HopDong_DAL.LoadTimKiemAdmin(sTimKiem);
+        }
         public static bool Insert(HopDong bp)
         {
             return HopDong_DAL.Insert(bp);

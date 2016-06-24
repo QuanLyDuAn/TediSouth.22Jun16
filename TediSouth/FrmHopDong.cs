@@ -34,7 +34,7 @@ namespace TediSouth
             linkFile.Text="No File Select.";
             cbbDuAn.Text =null  ;
             tbMaHopDong.Clear();
-            tbTimKiem.Clear();
+            tbTimKiem.Text= "Nhập Mã Hợp Đồng hoặc Mã Dự Án Để Tìm...";
 
         }
         public void LoadDGV()
@@ -216,6 +216,18 @@ namespace TediSouth
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void tbTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = HopDong_BUS.LoadTimKiemAdmin(tbTimKiem.Text);
+            dgvhopDong.DataSource = dt;
+        }
+
+        private void tbTimKiem_Click(object sender, EventArgs e)
+        {
+            tbTimKiem.Clear();
         }
     }
 }

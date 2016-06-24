@@ -29,7 +29,7 @@ namespace TediSouth
             tbEmail.Clear();
             tbNgDD.Clear();
             tbSDT.Clear();
-            tbTimKiem.Clear();
+            tbTimKiem.Text= "Nhập mã hoặc tên công ty để tìm kiếm...";
 
         }
         public void LoadDGV()
@@ -141,6 +141,18 @@ namespace TediSouth
             {
 
             }
+        }
+
+        private void tbTimKiem_Click(object sender, EventArgs e)
+        {
+            tbTimKiem.Clear();
+        }
+
+        private void tbTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = KhachHang_BUS.LoadTimKiemAdmin(tbTimKiem.Text);
+            dgvKhachHang.DataSource = dt;
         }
     }
 }

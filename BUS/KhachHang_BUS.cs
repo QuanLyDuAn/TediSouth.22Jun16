@@ -14,6 +14,11 @@ namespace BUS
         {
             return KhachHang_DAL.LoadKH();
         }
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            return KhachHang_DAL.LoadTimKiemAdmin(sTimKiem);
+        }
+        
         public static bool Insert(KhachHang bp)
         {
             return KhachHang_DAL.Insert(bp);

@@ -105,11 +105,11 @@
             // tbTimKiem
             // 
             this.tbTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTimKiem.Location = new System.Drawing.Point(42, 55);
+            this.tbTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTimKiem.Location = new System.Drawing.Point(21, 55);
             this.tbTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.tbTimKiem.Name = "tbTimKiem";
-            this.tbTimKiem.Size = new System.Drawing.Size(327, 26);
+            this.tbTimKiem.Size = new System.Drawing.Size(348, 28);
             this.tbTimKiem.TabIndex = 11;
             this.tbTimKiem.Text = "Nhập mã hoặc tên đơn vị để tìm kiếm...";
             this.tbTimKiem.Click += new System.EventHandler(this.tbTimKiem_Click);
