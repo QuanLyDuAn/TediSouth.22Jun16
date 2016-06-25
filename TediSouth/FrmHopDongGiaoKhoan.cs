@@ -52,7 +52,8 @@ namespace TediSouth
             dgvHDGK.Columns["MaDuAn"].HeaderText = "Mã Dự Án";
             dgvHDGK.Columns["NgayLapHDGK"].HeaderText = "Ngày Lập HĐGK";
             dgvHDGK.Columns["NgayKyDuyetHDGK"].HeaderText = "Ngày Ký Duyệt HĐGK";
-            dgvHDGK.Columns["KinhPhi"].HeaderText = "Kinh Phí";
+            dgvHDGK.Columns["KinhPhi"].DefaultCellStyle.Format = "#,#" + " VNĐ";
+            //dgvHDGK.Columns["KinhPhi"].HeaderText = "Kinh Phí";
             dgvHDGK.Columns["NoiDungHopDongGK"].HeaderText = " Nội Dung Hợp Đồng";
         }
         private void LoadCbMaHD()
@@ -97,7 +98,7 @@ namespace TediSouth
                 bp.MaDuAn = cbMaDuAn.SelectedValue.ToString();
                 bp.NgayLapHDGK = Convert.ToDateTime(dtNgayLap.Value.ToString());
                 bp.NgayDuyetHDGK = Convert.ToDateTime(dtNgayKy.Value.ToString());
-                bp.KinhPhi = int.Parse(tbKinhPhi.Text);
+                bp.KinhPhi = int.Parse(tbKinhPhi.Text)*1000000000;
                 bp.NoiDungHoDongGK = "D:/hồsơtổnghợp/HDGiaoKhoang/" + open.SafeFileName;
                 if (HopDongGiaoKhoan_BUS.KiemTra(tbMaHopDongGiaoKhoan.Text) == false)
                 {
@@ -142,7 +143,7 @@ namespace TediSouth
                 bp.MaDuAn = cbMaDuAn.SelectedValue.ToString();
                 bp.NgayLapHDGK = Convert.ToDateTime(dtNgayLap.Value.ToString());
                 bp.NgayDuyetHDGK = Convert.ToDateTime(dtNgayKy.Value.ToString());
-                bp.KinhPhi = double.Parse(tbKinhPhi.Text);
+                bp.KinhPhi = double.Parse(tbKinhPhi.Text)*1000000000;
                 bp.NoiDungHoDongGK = "D:/hồsơtổnghợp/HDGiaoKhoang/" + open.SafeFileName;
                 string sourcefolder = linkFile.Text;
                 string destfolder = "D:/hồsơtổnghợp/HDGiaoKhoang";
@@ -255,7 +256,10 @@ namespace TediSouth
                 dtNgayLap.Text = dr.Cells["NgayLapHDGK"].Value.ToString();
                 dtNgayKy.Text = dr.Cells["NgayKyDuyetHDGK"].Value.ToString();
                 tbMaHopDongGiaoKhoan.Text = dr.Cells["MaHopDongGK"].Value.ToString();
-                tbKinhPhi.Text = dr.Cells["KinhPhi"].Value.ToString();
+                string tam = dr.Cells["KinhPhi"].Value.ToString();
+                tbKinhPhi.Text =(Convert.ToDouble( tam )/ 1000000000).ToString();
+                tbKinhPhi.Text = string.Format("{0:#,##}", double.Parse(tbKinhPhi.Text));
+                //tbKinhPhi.Text = dr.Cells["KinhPhi"].Value.ToString();
                 cbMaDonVi.SelectedValue = dr.Cells["MaDonVi"].Value.ToString();
                 if (dr.Cells["NoiDungHopDongGK"].Value.ToString() == null)
                 {
@@ -306,6 +310,19 @@ namespace TediSouth
         private void tbTimKiem_Click(object sender, EventArgs e)
         {
             tbTimKiem.Clear();
+        }
+
+        private void tbKinhPhi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || //Ký tự Alphabe
+               char.IsSymbol(e.KeyChar) || //Ký tự đặc biệt
+               char.IsWhiteSpace(e.KeyChar) || //Khoảng cách
+               char.IsPunctuation(e.KeyChar)) //Dấu chấm                
+            {
+                e.Handled = true; //Không cho thể hiện lên TextBox
+                MessageBox.Show("Vui lòng nhập số", "Thông báo");
+                tbKinhPhi.Clear();
+            }
         }
     }
 }

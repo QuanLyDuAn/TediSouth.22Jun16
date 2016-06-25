@@ -28,7 +28,7 @@ namespace TediSouth
             tbDiaChi.Clear();
             tbEmail.Clear();
             tbNgDD.Clear();
-            tbSDT.Clear();
+            tbSDT1.Clear();
             tbTimKiem.Text= "Nhập mã hoặc tên công ty để tìm kiếm...";
 
         }
@@ -49,7 +49,7 @@ namespace TediSouth
         private void click_Add(object sender, EventArgs e)
         {
 
-            if (tbDiaChi.Text == "" || tbEmail.Text == "" || tbMaKhach.Text == "" || tbNgDD.Text == "" || tbSDT.Text == "" || tbTenCongTy.Text == "")
+            if (tbDiaChi.Text == "" || tbEmail.Text == "" || tbMaKhach.Text == "" || tbNgDD.Text == "" || tbSDT1.Text == "" || tbTenCongTy.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu", "Thông báo");
                 return;
@@ -62,7 +62,7 @@ namespace TediSouth
                 bp.NguoiDaiDien = tbNgDD.Text;
                 bp.DiaChi = tbDiaChi.Text;
                 bp.Email = tbEmail.Text;
-                bp.SDT = tbSDT.Text;
+                bp.SDT = tbSDT1.Text;
                 if (KhachHang_BUS.KiemTra(tbMaKhach.Text) == false)
                 {
                     KhachHang_BUS.Insert(bp);
@@ -78,7 +78,7 @@ namespace TediSouth
 
         private void click_Update(object sender, EventArgs e)
         {
-            if (tbDiaChi.Text == "" || tbEmail.Text == "" || tbMaKhach.Text == "" || tbNgDD.Text == "" || tbSDT.Text == "" || tbTenCongTy.Text == "")
+            if (tbDiaChi.Text == "" || tbEmail.Text == "" || tbMaKhach.Text == "" || tbNgDD.Text == "" || tbSDT1.Text == "" || tbTenCongTy.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu", "Thông báo");
                 return;
@@ -89,7 +89,7 @@ namespace TediSouth
             bp.NguoiDaiDien = tbNgDD.Text;
             bp.DiaChi = tbDiaChi.Text;
             bp.Email = tbEmail.Text;
-            bp.SDT = tbSDT.Text;
+            bp.SDT = tbSDT1.Text;
             if (KhachHang_BUS.Update(bp) == true)
             {
                 MessageBox.Show("Cập Nhật Thành Công", "Thông Báo");
@@ -102,7 +102,7 @@ namespace TediSouth
 
         private void click_Delete(object sender, EventArgs e)
         {
-            if (tbDiaChi.Text == "" || tbEmail.Text == "" || tbMaKhach.Text == "" || tbNgDD.Text == "" || tbSDT.Text == "" || tbTenCongTy.Text == "")
+            if (tbDiaChi.Text == "" || tbEmail.Text == "" || tbMaKhach.Text == "" || tbNgDD.Text == "" || tbSDT1.Text == "" || tbTenCongTy.Text == "")
             {
                 MessageBox.Show("Vui lòng Chọn Dữ Liệu Cần Xóa", "Thông báo");
                 return;
@@ -135,7 +135,7 @@ namespace TediSouth
                 tbNgDD.Text = dr.Cells["NguoiDaiDien"].Value.ToString();
                 tbDiaChi.Text = dr.Cells["DiaChi"].Value.ToString();
                 tbEmail.Text = dr.Cells["Email"].Value.ToString();
-                tbSDT.Text = dr.Cells["SDT"].Value.ToString();
+                tbSDT1.Text = dr.Cells["SDT"].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -153,6 +153,19 @@ namespace TediSouth
             DataTable dt = new DataTable();
             dt = KhachHang_BUS.LoadTimKiemAdmin(tbTimKiem.Text);
             dgvKhachHang.DataSource = dt;
+        }
+
+        private void tbSDT1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || //Ký tự Alphabe
+               char.IsSymbol(e.KeyChar) || //Ký tự đặc biệt
+               char.IsWhiteSpace(e.KeyChar) || //Khoảng cách
+               char.IsPunctuation(e.KeyChar)) //Dấu chấm                
+            {
+                e.Handled = true; //Không cho thể hiện lên TextBox
+                MessageBox.Show("Vui lòng nhập số", "Thông báo");
+                tbSDT1.Clear();
+            }
         }
     }
 }

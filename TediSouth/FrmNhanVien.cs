@@ -40,8 +40,7 @@ namespace TediSouth
             tbDiaChi.Clear();
             tbhoten.Clear();
             tbmanv.Clear();
-            tbSDT.Clear();
-            tbSDT.Clear();
+            tbSDT1.Clear();
             tbTimKiem.Text = "Nhập ID hoặc tên nhân viên để tìm kiếm...";
             pbHinhAnh.Image = null;
         }
@@ -100,7 +99,7 @@ namespace TediSouth
 
         private void click_Add(object sender, EventArgs e)
         {
-            if (tbEmail.Text == "" || tbDiaChi.Text == "" || tbhoten.Text == "" || tbmanv.Text == "" || tbSDT.Text == "" || txtHinhAnhPath.Text == "")
+            if (tbEmail.Text == "" || tbDiaChi.Text == "" || tbhoten.Text == "" || tbmanv.Text == "" || tbSDT1.Text == "" || txtHinhAnhPath.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu", "Thông báo");
                 return;
@@ -114,7 +113,7 @@ namespace TediSouth
                 nv.NgaySinh = DateTime.Parse(dtngaysinh.Text);
                 nv.HoTen = tbhoten.Text;
                 nv.Email = tbDiaChi.Text;
-                nv.DienThoaiNhanVien = tbSDT.Text;
+                nv.DienThoaiNhanVien = tbSDT1.Text;
                 nv.DiaChi = tbEmail.Text;
                 nv.HinhAnh = ConvertToByte();
                 if (NhanVien_BUS.KiemTra(tbmanv.Text) == false)
@@ -141,7 +140,7 @@ namespace TediSouth
         }
         private void click_Update(object sender, EventArgs e)
         {
-            if (tbEmail.Text == "" || tbDiaChi.Text == "" || tbhoten.Text == "" || tbmanv.Text == "" || tbSDT.Text == "")
+            if (tbEmail.Text == "" || tbDiaChi.Text == "" || tbhoten.Text == "" || tbmanv.Text == "" || tbSDT1.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu", "Thông báo");
                 return;
@@ -153,7 +152,7 @@ namespace TediSouth
             nv.NgaySinh = DateTime.Parse(dtngaysinh.Text);
             nv.HoTen = tbhoten.Text;
             nv.Email = tbDiaChi.Text;
-            nv.DienThoaiNhanVien = tbSDT.Text;
+            nv.DienThoaiNhanVien = tbSDT1.Text;
             nv.DiaChi = tbEmail.Text;
 
             if (txtHinhAnhPath.Text == "")
@@ -252,7 +251,7 @@ namespace TediSouth
                 dtngaysinh.Text = dr.Cells["NgaySinh"].Value.ToString();
                 tbhoten.Text = dr.Cells["HoTen"].Value.ToString();
                 tbDiaChi.Text = dr.Cells["Email"].Value.ToString();
-                tbSDT.Text = dr.Cells["DienThoaiNhanVien"].Value.ToString();
+                tbSDT1.Text = dr.Cells["DienThoaiNhanVien"].Value.ToString();
                 tbEmail.Text = dr.Cells["DiaChi"].Value.ToString();
                 //Convert hình ảnh đổ vào picBox
                 ImageConverter objImageConverter = new ImageConverter();
@@ -313,6 +312,19 @@ namespace TediSouth
                 dgvNhanVien.DataSource = dt;
             }
 
+        }
+
+        private void tbSDT1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || //Ký tự Alphabe
+               char.IsSymbol(e.KeyChar) || //Ký tự đặc biệt
+               char.IsWhiteSpace(e.KeyChar) || //Khoảng cách
+               char.IsPunctuation(e.KeyChar)) //Dấu chấm                
+            {
+                e.Handled = true; //Không cho thể hiện lên TextBox
+                MessageBox.Show("Vui lòng nhập số", "Thông báo");
+                tbSDT1.Clear();
+            }
         }
     }
 }

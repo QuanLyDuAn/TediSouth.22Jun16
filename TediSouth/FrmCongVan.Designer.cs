@@ -61,7 +61,7 @@
             this.cbLoaiCV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoaiCV.FormattingEnabled = true;
             this.cbLoaiCV.Location = new System.Drawing.Point(631, 193);
-            this.cbLoaiCV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbLoaiCV.Margin = new System.Windows.Forms.Padding(4);
             this.cbLoaiCV.Name = "cbLoaiCV";
             this.cbLoaiCV.Size = new System.Drawing.Size(79, 28);
             this.cbLoaiCV.TabIndex = 7;
@@ -96,7 +96,7 @@
             this.tbTieuDe.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTieuDe.Location = new System.Drawing.Point(529, 49);
-            this.tbTieuDe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTieuDe.Margin = new System.Windows.Forms.Padding(4);
             this.tbTieuDe.Name = "tbTieuDe";
             this.tbTieuDe.Size = new System.Drawing.Size(386, 26);
             this.tbTieuDe.TabIndex = 5;
@@ -107,7 +107,7 @@
             this.dtNgayLap.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtNgayLap.Location = new System.Drawing.Point(169, 194);
-            this.dtNgayLap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtNgayLap.Margin = new System.Windows.Forms.Padding(4);
             this.dtNgayLap.Name = "dtNgayLap";
             this.dtNgayLap.Size = new System.Drawing.Size(244, 22);
             this.dtNgayLap.TabIndex = 4;
@@ -120,7 +120,7 @@
             this.dgvCV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCV.Location = new System.Drawing.Point(64, 330);
-            this.dgvCV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCV.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCV.Name = "dgvCV";
             this.dgvCV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCV.Size = new System.Drawing.Size(1233, 255);
@@ -134,9 +134,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Blue;
             this.groupBox1.Location = new System.Drawing.Point(923, 20);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(421, 75);
             this.groupBox1.TabIndex = 74;
             this.groupBox1.TabStop = false;
@@ -148,7 +148,7 @@
             this.tbTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTimKiem.Location = new System.Drawing.Point(12, 29);
-            this.tbTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.tbTimKiem.Name = "tbTimKiem";
             this.tbTimKiem.Size = new System.Drawing.Size(398, 28);
             this.tbTimKiem.TabIndex = 11;
@@ -161,7 +161,7 @@
             this.tbMaCV.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbMaCV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMaCV.Location = new System.Drawing.Point(169, 49);
-            this.tbMaCV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbMaCV.Margin = new System.Windows.Forms.Padding(4);
             this.tbMaCV.Name = "tbMaCV";
             this.tbMaCV.Size = new System.Drawing.Size(244, 26);
             this.tbMaCV.TabIndex = 1;
@@ -234,7 +234,7 @@
             this.btnDuyetFile.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnDuyetFile.Image = ((System.Drawing.Image)(resources.GetObject("btnDuyetFile.Image")));
             this.btnDuyetFile.Location = new System.Drawing.Point(441, 141);
-            this.btnDuyetFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDuyetFile.Margin = new System.Windows.Forms.Padding(4);
             this.btnDuyetFile.Name = "btnDuyetFile";
             this.btnDuyetFile.Size = new System.Drawing.Size(156, 33);
             this.btnDuyetFile.TabIndex = 6;
@@ -249,7 +249,7 @@
             this.btnReset.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
             this.btnReset.Location = new System.Drawing.Point(857, 261);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(156, 42);
             this.btnReset.TabIndex = 72;
@@ -264,7 +264,7 @@
             this.btnXoa.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.Location = new System.Drawing.Point(631, 261);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(144, 42);
             this.btnXoa.TabIndex = 71;
@@ -279,7 +279,7 @@
             this.btnLuu.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.Location = new System.Drawing.Point(401, 261);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(155, 42);
             this.btnLuu.TabIndex = 70;
@@ -296,7 +296,7 @@
             this.btnThem.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.Location = new System.Drawing.Point(173, 261);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(159, 42);
             this.btnThem.TabIndex = 69;
@@ -309,7 +309,7 @@
             this.cbnhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbnhanvien.FormattingEnabled = true;
             this.cbnhanvien.Location = new System.Drawing.Point(169, 146);
-            this.cbnhanvien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbnhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.cbnhanvien.Name = "cbnhanvien";
             this.cbnhanvien.Size = new System.Drawing.Size(244, 28);
             this.cbnhanvien.TabIndex = 3;
@@ -320,7 +320,7 @@
             this.cbDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDuAn.FormattingEnabled = true;
             this.cbDuAn.Location = new System.Drawing.Point(166, 99);
-            this.cbDuAn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDuAn.Margin = new System.Windows.Forms.Padding(4);
             this.cbDuAn.Name = "cbDuAn";
             this.cbDuAn.Size = new System.Drawing.Size(244, 28);
             this.cbDuAn.TabIndex = 2;
@@ -365,7 +365,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCongVan";
             this.Text = "CÔNG VĂN";
             this.Load += new System.EventHandler(this.FrmCongVan_Load);

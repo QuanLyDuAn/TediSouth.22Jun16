@@ -56,11 +56,11 @@
             this.lbHoTen = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.lbNVKhac = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvNV = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbNVKhac = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQDDH)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
@@ -432,6 +432,18 @@
             this.label11.TabIndex = 97;
             this.label11.Text = "Chức Vụ:";
             // 
+            // lbNVKhac
+            // 
+            this.lbNVKhac.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbNVKhac.AutoSize = true;
+            this.lbNVKhac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNVKhac.ForeColor = System.Drawing.Color.Crimson;
+            this.lbNVKhac.Location = new System.Drawing.Point(92, 61);
+            this.lbNVKhac.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNVKhac.Name = "lbNVKhac";
+            this.lbNVKhac.Size = new System.Drawing.Size(0, 20);
+            this.lbNVKhac.TabIndex = 97;
+            // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -480,18 +492,6 @@
             this.label2.Size = new System.Drawing.Size(94, 20);
             this.label2.TabIndex = 109;
             this.label2.Text = "Tìm Kiếm:";
-            // 
-            // lbNVKhac
-            // 
-            this.lbNVKhac.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbNVKhac.AutoSize = true;
-            this.lbNVKhac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNVKhac.ForeColor = System.Drawing.Color.Crimson;
-            this.lbNVKhac.Location = new System.Drawing.Point(92, 61);
-            this.lbNVKhac.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbNVKhac.Name = "lbNVKhac";
-            this.lbNVKhac.Size = new System.Drawing.Size(0, 20);
-            this.lbNVKhac.TabIndex = 97;
             // 
             // FrmQDDieuHanhDuAn
             // 
