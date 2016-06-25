@@ -60,7 +60,8 @@ namespace TediSouth
             dgvHSDT.Columns["MaDonVi"].HeaderText = "Đơn Vị";
             dgvHSDT.Columns["MaDuAn"].HeaderText = "Dự Án";
             dgvHSDT.Columns["NgayLapHoSoDauThau"].HeaderText = "Ngày Lập";
-            dgvHSDT.Columns["MucGiaBoThau"].HeaderText = "Mức giá";
+            dgvHSDT.Columns["MucGiaBoThau"].DefaultCellStyle.Format = "#,#" + " VNĐ";
+            //dgvHSDT.Columns["MucGiaBoThau"].HeaderText = "Mức giá";
             dgvHSDT.Columns["HoSoDauThau"].HeaderText = "Hồ Sơ";
         }
         public void AutoDV()
@@ -123,7 +124,7 @@ namespace TediSouth
                 bp.MaDonVi = cbDonVi.SelectedValue.ToString();
                 bp.MaDuAn = cbDuAn.SelectedValue.ToString();
                 bp.NgayLapHoSoDauThau = Convert.ToDateTime(dtngaylap.Value.ToString());
-                bp.MucGiaBoThau = Convert.ToDouble(tbMucGia.Text);
+                bp.MucGiaBoThau = Convert.ToDouble(tbMucGia.Text) * 1000000000;
                 bp.HoSoDauThau = "D:/HồSơTổngHợp/HSDauThau/" + open.SafeFileName;
                 if (HoSoDuThau_BUS.KiemTra(cbDonVi.SelectedValue.ToString(), cbDuAn.SelectedValue.ToString()) == false)
                 {
@@ -152,7 +153,7 @@ namespace TediSouth
             bp.MaDonVi = cbDonVi.SelectedValue.ToString();
             bp.MaDuAn = cbDuAn.SelectedValue.ToString();
             bp.NgayLapHoSoDauThau = Convert.ToDateTime(dtngaylap.Value.ToString());
-            bp.MucGiaBoThau = Convert.ToDouble(tbMucGia.Text);
+            bp.MucGiaBoThau = Convert.ToDouble(tbMucGia.Text)*1000000000;
             bp.HoSoDauThau = "D:/HồSơTổngHợp/HSDauThau/" + open.SafeFileName;
             string SourceFolder = LinkFile.Text;
             string DestFolder = "D:/HồSơTổngHợp/HSDauThau";
@@ -202,7 +203,10 @@ namespace TediSouth
                 cbDonVi.SelectedValue = dr.Cells["MaDonVi"].Value.ToString();
                 cbDuAn.SelectedValue = dr.Cells["MaDuAn"].Value.ToString();
                 dtngaylap.Text = dr.Cells["NgayLapHoSoDauThau"].Value.ToString();
-                tbMucGia.Text = dr.Cells["MucGiaBoThau"].Value.ToString();
+                string tam=dr.Cells["MucGiaBoThau"].Value.ToString();
+                tbMucGia.Text = (Convert.ToDouble(tam) / 1000000000).ToString();
+                tbMucGia.Text = string.Format("{0:#,##}", double.Parse(tbMucGia.Text));
+                //tbMucGia.Text = dr.Cells["MucGiaBoThau"].Value.ToString();
                 LinkFile.Text = dr.Cells["HoSoDauThau"].Value.ToString();
             }
             catch (Exception ex)
@@ -342,6 +346,19 @@ namespace TediSouth
         private void tbTimKiem_Click(object sender, EventArgs e)
         {
             tbTimKiem.Clear();
+        }
+
+        private void tbMucGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || //Ký tự Alphabe
+               char.IsSymbol(e.KeyChar) || //Ký tự đặc biệt
+               char.IsWhiteSpace(e.KeyChar) || //Khoảng cách
+               char.IsPunctuation(e.KeyChar)) //Dấu chấm                
+            {
+                e.Handled = true; //Không cho thể hiện lên TextBox
+                MessageBox.Show("Vui lòng nhập số", "Thông báo");
+                tbMucGia.Clear();
+            }
         }
     }
 }

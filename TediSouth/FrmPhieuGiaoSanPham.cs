@@ -310,5 +310,18 @@ namespace TediSouth
         {
             tbTimKiem.Clear();
         }
+
+        private void tbSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || //Ký tự Alphabe
+               char.IsSymbol(e.KeyChar) || //Ký tự đặc biệt
+               char.IsWhiteSpace(e.KeyChar) || //Khoảng cách
+               char.IsPunctuation(e.KeyChar)) //Dấu chấm                
+            {
+                e.Handled = true; //Không cho thể hiện lên TextBox
+                MessageBox.Show("Vui lòng nhập số", "Thông báo");
+                tbSoLuong.Clear();
+            }
+        }
     }
 }
