@@ -261,6 +261,7 @@ namespace TediSouth
 
                 DataTable tam = ChiTietDieuHanh_BUS.LoadCTDH_ID(dr.Cells["QDDieuHanh"].Value.ToString());
                 dgvNV.DataSource = tam;
+                ReLoadGrNV();
             }
             catch (Exception ex)
             {
@@ -364,13 +365,37 @@ namespace TediSouth
                 tbMaQD.Text = dr.Cells["QDDieuHanh"].Value.ToString();
                 cbMaNV.SelectedValue = dr.Cells["IDNhanVien"].Value.ToString();
                 txtPhanCong.Text = dr.Cells["ViTriPhanCong"].Value.ToString();
+                if (cbMaNV.SelectedValue == null)
+                {
+                    DataTable dt = new DataTable();
+                    lbNVKhac.Text = "Nhân Viên Này Thuộc Công Ty Khác.";
+                    dt = DBConnect.TaoBang("select MaChucVu, HoTen from DonVi a, NhanVien b, QuyetDinhCongViec c where a.MaDonVi = b.MaDonVi and  b.IDNhanVien = c.IDNhanVien and b.IDNhanVien = '" + dr.Cells["IDNhanVien"].Value.ToString() + "'");
+                    DataRow dro = dt.Rows[0];
+                    lbHoTen.Text = dro["HoTen"].ToString();
+                    lbChucVu.Text = dro["MaChucVu"].ToString();
+                    txtPhanCong.Enabled = false;
+                    btnThemCTDH.Enabled = false;
+                    btnSuaCTDH.Enabled = false;
+                    btnXoaCTDH.Enabled = false;
+                }
+                else
+                {
+                    ReLoadGrNV();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
+        public void ReLoadGrNV()
+        {
+            lbNVKhac.Text = null;
+            txtPhanCong.Enabled = true;
+            btnThemCTDH.Enabled = true;
+            btnSuaCTDH.Enabled = true;
+            btnXoaCTDH.Enabled = true;
+        }
         private void linkFile_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string txt = linkFile.Text;
