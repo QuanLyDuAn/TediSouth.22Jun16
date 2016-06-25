@@ -24,11 +24,14 @@ namespace TediSouth
         public FrmDuAn()
         {
             InitializeComponent();
+           
+        }
+        private void FrmDuAn_Load(object sender, EventArgs e)
+        {
             Reload();
             LoadDGV();
             AutoLV();
         }
-        
         public void Reload()
         {
             tbMaDuAn.Clear();
@@ -64,10 +67,12 @@ namespace TediSouth
             {
                 collection.Add(dr.GetString(0));
             }
+            tbkhachang.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            tbkhachang.AutoCompleteSource = AutoCompleteSource.CustomSource;
             tbkhachang.AutoCompleteCustomSource = collection;
             con.Close();
         }
-
+        
         private void click_Add(object sender, EventArgs e)
         {
             if (tbkhachang.Text == "" || tbKinhPhi1.Text == "" || tbMaDuAn.Text == "" || tbTenDuAn.Text == "" || tbThoiGian1.Text == "" )
@@ -204,5 +209,7 @@ namespace TediSouth
                 tbKinhPhi1.Clear();
             }
         }
+
+        
     }
 }

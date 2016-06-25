@@ -57,8 +57,9 @@
             // tbkhachang
             // 
             this.tbkhachang.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbkhachang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.tbkhachang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbkhachang.Location = new System.Drawing.Point(152, 160);
+            this.tbkhachang.Location = new System.Drawing.Point(175, 160);
             this.tbkhachang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbkhachang.Name = "tbkhachang";
             this.tbkhachang.Size = new System.Drawing.Size(289, 26);
@@ -69,7 +70,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(17, 164);
+            this.label8.Location = new System.Drawing.Point(40, 164);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 20);
@@ -131,7 +132,7 @@
             // 
             this.tbMaDuAn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbMaDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaDuAn.Location = new System.Drawing.Point(152, 70);
+            this.tbMaDuAn.Location = new System.Drawing.Point(175, 70);
             this.tbMaDuAn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbMaDuAn.Name = "tbMaDuAn";
             this.tbMaDuAn.Size = new System.Drawing.Size(289, 26);
@@ -156,7 +157,7 @@
             // 
             this.tbTenDuAn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbTenDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTenDuAn.Location = new System.Drawing.Point(152, 116);
+            this.tbTenDuAn.Location = new System.Drawing.Point(175, 116);
             this.tbTenDuAn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbTenDuAn.Multiline = true;
             this.tbTenDuAn.Name = "tbTenDuAn";
@@ -204,7 +205,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 119);
+            this.label3.Location = new System.Drawing.Point(55, 119);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 20);
@@ -216,7 +217,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(73, 74);
+            this.label2.Location = new System.Drawing.Point(96, 74);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 20);
@@ -347,6 +348,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmDuAn";
             this.Text = "DỰ ÁN";
+            this.Load += new System.EventHandler(this.FrmDuAn_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDA)).EndInit();
