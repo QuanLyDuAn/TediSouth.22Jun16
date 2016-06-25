@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
 using System.Data.SqlClient;
+using System.Collections;
+using System.Configuration;
 
 namespace TediSouth
 {
@@ -20,9 +22,6 @@ namespace TediSouth
         {
             InitializeComponent();
             MacDinh();
-            this.tbDuAn.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            this.tbDuAn.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            AutoTenK();
         }
         void Mo()
         {
@@ -46,7 +45,7 @@ namespace TediSouth
         private void click_Find(object sender, EventArgs e)
         {
             if (tbDuAn.Text == "")
-            { 
+            {
                 MessageBox.Show("Vui lòng nhập tên dự án", "Thông Báo");
                 MacDinh();
             }
@@ -55,7 +54,7 @@ namespace TediSouth
                 string tim = string.Format("select * from duan where tenduan like N'%{0}%'", tbDuAn.Text);
                 DataTable tam = DBConnect.TaoBang(tim);
 
-                if(tam.Rows.Count ==0)
+                if (tam.Rows.Count == 0)
                 {
                     MacDinh();
                     MessageBox.Show("Không có dự án này", "Thông Báo");
@@ -150,17 +149,23 @@ namespace TediSouth
         }
         private void AutoTenK()
         {
-            SqlConnection con =new SqlConnection(DBConnect.chuoiKetNoi);
-            SqlCommand cmd = new SqlCommand("Select tenduan from duan", con);
-            con.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-            while (dr.Read())
+
+            string ConString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(ConString))
             {
-                collection.Add(dr.GetString(0));
+                string lenh = string.Format("select tenduan from duan where tenduan like N'%{0}%'", tbDuAn.Text);
+                SqlCommand cmd = new SqlCommand(lenh, con);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                AutoCompleteStringCollection MyCollection = new AutoCompleteStringCollection();
+                while (reader.Read())
+                {
+                    MyCollection.Add(reader["TenDuAn"].ToString());
+                }
+                tbDuAn.AutoCompleteCustomSource = MyCollection;
+                con.Close();
             }
-            tbDuAn.AutoCompleteCustomSource = collection;
-            con.Close();
+
         }
 
         private void FrmTongQuatDuAn_Load(object sender, EventArgs e)
@@ -168,9 +173,8 @@ namespace TediSouth
             AutoTenK();
         }
 
-        private void tbDuAn_TextChanged(object sender, EventArgs e)
+        private void tbDuAn_TextChanged_1(object sender, EventArgs e)
         {
-            AutoTenK();
             MacDinh();
             DataTable dt = new DataTable();
             gird.DataSource = dt;

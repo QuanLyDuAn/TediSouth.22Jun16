@@ -32,15 +32,13 @@
             this.tbDuAn = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.gird = new System.Windows.Forms.DataGridView();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.groupBox1.SuspendLayout();
+            this.gird = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.gird)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,21 +48,21 @@
             this.tbDuAn.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.tbDuAn.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbDuAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDuAn.Location = new System.Drawing.Point(368, 17);
+            this.tbDuAn.Location = new System.Drawing.Point(169, 17);
             this.tbDuAn.Margin = new System.Windows.Forms.Padding(2);
             this.tbDuAn.Name = "tbDuAn";
-            this.tbDuAn.Size = new System.Drawing.Size(139, 22);
+            this.tbDuAn.Size = new System.Drawing.Size(475, 22);
             this.tbDuAn.TabIndex = 57;
             this.tbDuAn.Text = "Nhập tên dự án........";
             this.tbDuAn.Click += new System.EventHandler(this.tbclick);
-            this.tbDuAn.TextChanged += new System.EventHandler(this.tbDuAn_TextChanged);
+            this.tbDuAn.TextChanged += new System.EventHandler(this.tbDuAn_TextChanged_1);
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(303, 20);
+            this.label2.Location = new System.Drawing.Point(104, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 16);
             this.label2.TabIndex = 58;
@@ -79,36 +77,12 @@
             this.btnTimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnTimKiem.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
-            this.btnTimKiem.Location = new System.Drawing.Point(552, 12);
+            this.btnTimKiem.Location = new System.Drawing.Point(676, 12);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(129, 31);
             this.btnTimKiem.TabIndex = 60;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.Click += new System.EventHandler(this.click_Find);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.gird);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 119);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1008, 350);
-            this.groupBox1.TabIndex = 61;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông Tin Dự Án";
-            // 
-            // gird
-            // 
-            this.gird.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gird.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gird.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gird.Location = new System.Drawing.Point(17, 21);
-            this.gird.Name = "gird";
-            this.gird.Size = new System.Drawing.Size(971, 368);
-            this.gird.TabIndex = 64;
             // 
             // simpleButton1
             // 
@@ -200,26 +174,37 @@
             this.simpleButton6.Text = "Sản Phẩm:";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
+            // gird
+            // 
+            this.gird.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gird.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gird.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gird.Location = new System.Drawing.Point(25, 124);
+            this.gird.Name = "gird";
+            this.gird.Size = new System.Drawing.Size(995, 345);
+            this.gird.TabIndex = 68;
+            // 
             // FrmTongQuatDuAn
             // 
             this.AcceptButton = this.btnTimKiem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 481);
+            this.Controls.Add(this.gird);
             this.Controls.Add(this.simpleButton6);
             this.Controls.Add(this.simpleButton5);
             this.Controls.Add(this.simpleButton4);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.tbDuAn);
             this.Controls.Add(this.label2);
             this.Name = "FrmTongQuatDuAn";
             this.Text = "TỔNG QUÁT DỰ ÁN";
             this.Load += new System.EventHandler(this.FrmTongQuatDuAn_Load);
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gird)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -231,13 +216,12 @@
         private System.Windows.Forms.TextBox tbDuAn;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.SimpleButton btnTimKiem;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView gird;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private System.Windows.Forms.DataGridView gird;
     }
 }
