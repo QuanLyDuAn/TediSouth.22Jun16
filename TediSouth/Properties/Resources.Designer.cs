@@ -63,6 +63,16 @@ namespace TediSouth.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _12965869_logout_icon_Stock_Photo {
+            get {
+                object obj = ResourceManager.GetObject("12965869-logout-icon-Stock-Photo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _13116hinh_anh_back_ground_mau_xanh_nhe_nhang_cho_wedsite {
             get {
                 object obj = ResourceManager.GetObject("13116hinh-anh-back-ground-mau-xanh-nhe-nhang-cho-wedsite", resourceCulture);
@@ -246,6 +256,66 @@ namespace TediSouth.Properties {
         internal static System.Drawing.Bitmap _1465312286_plus {
             get {
                 object obj = ResourceManager.GetObject("1465312286_plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1466864499_office_37 {
+            get {
+                object obj = ResourceManager.GetObject("1466864499_office-37", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1466864538_office_82 {
+            get {
+                object obj = ResourceManager.GetObject("1466864538_office-82", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1466864580_office_82 {
+            get {
+                object obj = ResourceManager.GetObject("1466864580_office-82", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1466864605_office_82 {
+            get {
+                object obj = ResourceManager.GetObject("1466864605_office-82", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1466865504_office_18 {
+            get {
+                object obj = ResourceManager.GetObject("1466865504_office-18", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clouds {
+            get {
+                object obj = ResourceManager.GetObject("clouds", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

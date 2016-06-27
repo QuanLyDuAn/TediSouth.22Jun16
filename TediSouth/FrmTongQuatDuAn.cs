@@ -22,6 +22,7 @@ namespace TediSouth
         {
             InitializeComponent();
             MacDinh();
+            AutoTenK();
         }
         void Mo()
         {
@@ -79,7 +80,8 @@ namespace TediSouth
             gird.Columns["tencongty"].HeaderText = "Công Ty";
             gird.Columns["NgayLap"].HeaderText = "Ngày Lập";
             gird.Columns["SoThangTrienKhai"].HeaderText = "Thời Gian Triển Khai";
-            gird.Columns["TongKinhPhi"].HeaderText = "Kinh Phí";
+            //gird.Columns["TongKinhPhi"].HeaderText = "Kinh Phí";
+            gird.Columns["TongKinhPhi"].DefaultCellStyle.Format = "#,#" + " VNĐ";
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -105,7 +107,8 @@ namespace TediSouth
             gird.Columns["MaDuAn"].HeaderText = "Mã Dự Án";
             gird.Columns["NgayLapHDGK"].HeaderText = "Ngày Lập HĐGK";
             gird.Columns["NgayKyDuyetHDGK"].HeaderText = "Ngày Ký Duyệt HĐGK";
-            gird.Columns["KinhPhi"].HeaderText = "Kinh Phí";
+            gird.Columns["KinhPhi"].DefaultCellStyle.Format = "#,#" + " VNĐ";
+            //gird.Columns["KinhPhi"].HeaderText = "Kinh Phí";
             gird.Columns["NoiDungHopDongGK"].HeaderText = " Nội Dung Hợp Đồng";
         }
 
@@ -153,16 +156,20 @@ namespace TediSouth
             string ConString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
             using (SqlConnection con = new SqlConnection(ConString))
             {
-                string lenh = string.Format("select tenduan from duan where tenduan like N'%{0}%'", tbDuAn.Text);
+                //string lenh = string.Format("select tenduan from duan where tenduan like N'%{0}%'", tbDuAn.Text);
+                string lenh = "select tenduan from duan";
                 SqlCommand cmd = new SqlCommand(lenh, con);
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 AutoCompleteStringCollection MyCollection = new AutoCompleteStringCollection();
                 while (reader.Read())
                 {
-                    MyCollection.Add(reader["TenDuAn"].ToString());
+                    MyCollection.Add(reader.GetString(0));
                 }
+                tbDuAn.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                tbDuAn.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 tbDuAn.AutoCompleteCustomSource = MyCollection;
+                
                 con.Close();
             }
 
@@ -178,6 +185,7 @@ namespace TediSouth
             MacDinh();
             DataTable dt = new DataTable();
             gird.DataSource = dt;
+            
         }
     }
 }

@@ -174,10 +174,10 @@ namespace TediSouth
             try
             {
                 DataRow dr = dt.Rows[0];
-                lbID.Caption = "Mã Nhân Viên: " + MaNV;
-                lbHoTen.Caption = "Họ Tên: " + dr["HoTen"].ToString();
-                lbDonVi.Caption = "Đơn Vị: " + dr["TenDonVi"].ToString();
-                lbChucVu.Caption = "Chức Vụ: " + dr["TenChucVu"].ToString();
+                lbID1.Caption = "Mã Nhân Viên: " + MaNV;
+                lbHoTen1.Caption = "Họ Tên: " + dr["HoTen"].ToString();
+                lbDonVi1.Caption = "Đơn Vị: " + dr["TenDonVi"].ToString();
+                lbChucVu1.Caption = "Chức Vụ: " + dr["TenChucVu"].ToString();
             }
             catch (Exception ex)
             {

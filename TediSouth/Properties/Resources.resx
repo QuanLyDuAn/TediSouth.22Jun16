@@ -118,8 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="1465311721_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagine\1465311721_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="12965869-logout-icon-Stock-Photo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagine\12965869-logout-icon-Stock-Photo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1466864580_office-82" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagine\1466864580_office-82.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1465312059_retweet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagine\1465312059_retweet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,8 +133,8 @@
   <data name="1465311978_folder-open" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagine\1465311978_folder-open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1465311844_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagine\1465311844_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1466864538_office-82" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagine\1466864538_office-82.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1465311907_list-alt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagine\1465311907_list-alt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,20 +142,26 @@
   <data name="1465312211_home1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagine\1465312211_home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1465311721_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagine\1465311721_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1465311844_user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagine\1465311844_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1466864499_office-37" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagine\1466864499_office-37.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1465312158_tag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagine\1465312158_tag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1465312067_map-marker-alt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagine\1465312067_map-marker-alt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clouds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagine\clouds.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1465312195_list-alt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagine\1465312195_list-alt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1465312211_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagine\1465312211_home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1465312067_map-marker-alt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagine\1465312067_map-marker-alt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1465311847_folder-close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagine\1465311847_folder-close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,13 +175,25 @@
   <data name="1465312062_ban-circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagine\1465312062_ban-circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="13116hinh-anh-back-ground-mau-xanh-nhe-nhang-cho-wedsite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagine\13116hinh-anh-back-ground-mau-xanh-nhe-nhang-cho-wedsite.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1466864605_office-82" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagine\1466864605_office-82.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1465311844_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagine\1465311844_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1465312211_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagine\1465312211_home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1465311729_logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagine\1465311729_logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1465312053_certificate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagine\1465312053_certificate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="13116hinh-anh-back-ground-mau-xanh-nhe-nhang-cho-wedsite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagine\13116hinh-anh-back-ground-mau-xanh-nhe-nhang-cho-wedsite.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1466865504_office-18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagine\1466865504_office-18.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

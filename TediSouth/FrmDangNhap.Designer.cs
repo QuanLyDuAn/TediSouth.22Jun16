@@ -139,6 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TediSouth.Properties.Resources._13116hinh_anh_back_ground_mau_xanh_nhe_nhang_cho_wedsite;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(449, 483);
             this.Controls.Add(this.lbLoiDangNhap);
             this.Controls.Add(this.lbLoiMatKhau);

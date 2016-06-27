@@ -363,6 +363,27 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagine\clouds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagine\12965869-logout-icon-Stock-Photo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagine\1466864499_office-37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagine\1466864538_office-82.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagine\1466864580_office-82.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagine\1466864605_office-82.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagine\1466865504_office-18.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

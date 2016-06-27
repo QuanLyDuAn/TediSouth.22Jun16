@@ -16,7 +16,7 @@ namespace TediSouth
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmDuAn());
+            Application.Run(new QuanLyDuAn());
         }
     }
 }
