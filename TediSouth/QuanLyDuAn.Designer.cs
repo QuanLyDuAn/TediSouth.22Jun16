@@ -83,6 +83,14 @@
             this.tim = new DevExpress.XtraBars.BarButtonItem();
             this.btDoiPass = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhuLuc = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem6 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.lbID1 = new DevExpress.XtraBars.BarStaticItem();
+            this.lbChucVu1 = new DevExpress.XtraBars.BarStaticItem();
+            this.lbDonVi1 = new DevExpress.XtraBars.BarStaticItem();
+            this.lbHoTen1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem10 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem11 = new DevExpress.XtraBars.BarStaticItem();
             this.rbtrangchu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -106,14 +114,6 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barEditItem6 = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.lbID1 = new DevExpress.XtraBars.BarStaticItem();
-            this.lbChucVu1 = new DevExpress.XtraBars.BarStaticItem();
-            this.lbDonVi1 = new DevExpress.XtraBars.BarStaticItem();
-            this.lbHoTen1 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem10 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem11 = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -124,8 +124,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -188,8 +188,8 @@
             this.barStaticItem10,
             this.barStaticItem11});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonControl1.MaxItemId = 74;
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.ribbonControl1.MaxItemId = 78;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbtrangchu,
@@ -204,7 +204,7 @@
             this.repositoryItemTextEdit2,
             this.repositoryItemTextEdit3,
             this.repositoryItemTextEdit4});
-            this.ribbonControl1.Size = new System.Drawing.Size(1064, 145);
+            this.ribbonControl1.Size = new System.Drawing.Size(1241, 183);
             // 
             // btDangNhap
             // 
@@ -656,6 +656,54 @@
             this.btnPhuLuc.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnPhuLuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.click_PhuLuc);
             // 
+            // barEditItem6
+            // 
+            this.barEditItem6.Caption = "barEditItem6";
+            this.barEditItem6.Edit = this.repositoryItemTextEdit4;
+            this.barEditItem6.Id = 67;
+            this.barEditItem6.Name = "barEditItem6";
+            // 
+            // repositoryItemTextEdit4
+            // 
+            this.repositoryItemTextEdit4.AutoHeight = false;
+            this.repositoryItemTextEdit4.Name = "repositoryItemTextEdit4";
+            // 
+            // lbID1
+            // 
+            this.lbID1.Id = 68;
+            this.lbID1.Name = "lbID1";
+            this.lbID1.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // lbChucVu1
+            // 
+            this.lbChucVu1.Id = 69;
+            this.lbChucVu1.Name = "lbChucVu1";
+            this.lbChucVu1.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // lbDonVi1
+            // 
+            this.lbDonVi1.Id = 70;
+            this.lbDonVi1.Name = "lbDonVi1";
+            this.lbDonVi1.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // lbHoTen1
+            // 
+            this.lbHoTen1.Id = 71;
+            this.lbHoTen1.Name = "lbHoTen1";
+            this.lbHoTen1.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // barStaticItem10
+            // 
+            this.barStaticItem10.Id = 72;
+            this.barStaticItem10.Name = "barStaticItem10";
+            this.barStaticItem10.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // barStaticItem11
+            // 
+            this.barStaticItem11.Id = 73;
+            this.barStaticItem11.Name = "barStaticItem11";
+            this.barStaticItem11.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
             // rbtrangchu
             // 
             this.rbtrangchu.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -863,62 +911,15 @@
             this.ribbonPageGroup15.ShowCaptionButton = false;
             this.ribbonPageGroup15.Text = "                                        ";
             // 
-            // barEditItem6
-            // 
-            this.barEditItem6.Caption = "barEditItem6";
-            this.barEditItem6.Edit = this.repositoryItemTextEdit4;
-            this.barEditItem6.Id = 67;
-            this.barEditItem6.Name = "barEditItem6";
-            // 
-            // repositoryItemTextEdit4
-            // 
-            this.repositoryItemTextEdit4.AutoHeight = false;
-            this.repositoryItemTextEdit4.Name = "repositoryItemTextEdit4";
-            // 
-            // lbID1
-            // 
-            this.lbID1.Id = 68;
-            this.lbID1.Name = "lbID1";
-            this.lbID1.TextAlignment = System.Drawing.StringAlignment.Near;
-            // 
-            // lbChucVu1
-            // 
-            this.lbChucVu1.Id = 69;
-            this.lbChucVu1.Name = "lbChucVu1";
-            this.lbChucVu1.TextAlignment = System.Drawing.StringAlignment.Near;
-            // 
-            // lbDonVi1
-            // 
-            this.lbDonVi1.Id = 70;
-            this.lbDonVi1.Name = "lbDonVi1";
-            this.lbDonVi1.TextAlignment = System.Drawing.StringAlignment.Near;
-            // 
-            // lbHoTen1
-            // 
-            this.lbHoTen1.Id = 71;
-            this.lbHoTen1.Name = "lbHoTen1";
-            this.lbHoTen1.TextAlignment = System.Drawing.StringAlignment.Near;
-            // 
-            // barStaticItem10
-            // 
-            this.barStaticItem10.Id = 72;
-            this.barStaticItem10.Name = "barStaticItem10";
-            this.barStaticItem10.TextAlignment = System.Drawing.StringAlignment.Near;
-            // 
-            // barStaticItem11
-            // 
-            this.barStaticItem11.Id = 73;
-            this.barStaticItem11.Name = "barStaticItem11";
-            this.barStaticItem11.TextAlignment = System.Drawing.StringAlignment.Near;
-            // 
             // QuanLyDuAn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 498);
+            this.ClientSize = new System.Drawing.Size(1241, 613);
             this.Controls.Add(this.ribbonControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "QuanLyDuAn";
             this.Ribbon = this.ribbonControl1;
             this.Text = "QUẢN LÝ DỰ ÁN";
@@ -933,8 +934,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

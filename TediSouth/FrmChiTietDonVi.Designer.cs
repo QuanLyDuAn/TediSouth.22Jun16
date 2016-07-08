@@ -47,7 +47,7 @@
             this.dgvCTDV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCTDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCTDV.Location = new System.Drawing.Point(13, 226);
-            this.dgvCTDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCTDV.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCTDV.Name = "dgvCTDV";
             this.dgvCTDV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCTDV.Size = new System.Drawing.Size(544, 278);
@@ -60,7 +60,7 @@
             this.cbMaBP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaBP.FormattingEnabled = true;
             this.cbMaBP.Location = new System.Drawing.Point(205, 69);
-            this.cbMaBP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbMaBP.Margin = new System.Windows.Forms.Padding(4);
             this.cbMaBP.Name = "cbMaBP";
             this.cbMaBP.Size = new System.Drawing.Size(244, 28);
             this.cbMaBP.TabIndex = 2;
@@ -70,7 +70,7 @@
             this.tbMaDV.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbMaDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMaDV.Location = new System.Drawing.Point(205, 26);
-            this.tbMaDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbMaDV.Margin = new System.Windows.Forms.Padding(4);
             this.tbMaDV.Name = "tbMaDV";
             this.tbMaDV.Size = new System.Drawing.Size(244, 26);
             this.tbMaDV.TabIndex = 1;
@@ -107,7 +107,7 @@
             this.btnReset.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
             this.btnReset.Location = new System.Drawing.Point(425, 135);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(125, 49);
             this.btnReset.TabIndex = 53;
@@ -122,7 +122,7 @@
             this.btnXoa.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.Location = new System.Drawing.Point(291, 135);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(125, 49);
             this.btnXoa.TabIndex = 52;
@@ -137,7 +137,7 @@
             this.btnLuu.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
             this.btnLuu.Location = new System.Drawing.Point(157, 135);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(125, 49);
             this.btnLuu.TabIndex = 51;
@@ -154,7 +154,7 @@
             this.btnThem.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.Location = new System.Drawing.Point(23, 135);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(125, 49);
             this.btnThem.TabIndex = 50;
@@ -175,7 +175,7 @@
             this.Controls.Add(this.tbMaDV);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmChiTietDonVi";
             this.Text = "PHÒNG BAN";
             this.Load += new System.EventHandler(this.FrmChiTietDonVi_Load);

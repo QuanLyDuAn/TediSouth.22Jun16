@@ -20,9 +20,21 @@ namespace TediSouth
         public string ten;
         public FrmTongQuatDuAn()
         {
-            InitializeComponent();
+            InitializeComponent();         
+        }
+        private void FrmTongQuatDuAn_Load(object sender, EventArgs e)
+        {
             MacDinh();
             AutoTenK();
+        }
+
+        private void tbDuAn_TextChanged_1(object sender, EventArgs e)
+        {
+            MacDinh();
+
+            DataTable dt = new DataTable();
+            gird.DataSource = dt;
+
         }
         void Mo()
         {
@@ -175,17 +187,6 @@ namespace TediSouth
 
         }
 
-        private void FrmTongQuatDuAn_Load(object sender, EventArgs e)
-        {
-            AutoTenK();
-        }
-
-        private void tbDuAn_TextChanged_1(object sender, EventArgs e)
-        {
-            MacDinh();
-            DataTable dt = new DataTable();
-            gird.DataSource = dt;
-            
-        }
+        
     }
 }
