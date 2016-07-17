@@ -16,9 +16,15 @@ namespace TediSouth
 {
     public partial class FrmPhuLuc : Form
     {
+        public string ID;
         public FrmPhuLuc()
         {
             InitializeComponent();
+        }
+        private void FrmPhuLuc_Load(object sender, EventArgs e)
+        {
+            LoadCbHopDong();
+            LoadDGV();
         }
         OpenFileDialog open = new OpenFileDialog();
         private void btnDuyetFile_Click(object sender, EventArgs e)
@@ -59,7 +65,7 @@ namespace TediSouth
         {
             try
             {
-                DataGridViewRow dr = dgvhopDong.SelectedRows[0];
+                DataGridViewRow dr = dgvPhuLucHopDong.SelectedRows[0];
                 tbmaphuluc.Text = dr.Cells["MaPhuLuc"].Value.ToString();
                 cbmahopdong.SelectedValue = dr.Cells["MaHopDong"].Value.ToString();
                 dtNgayLap.Text = dr.Cells["NgayLap"].Value.ToString();
@@ -107,9 +113,9 @@ namespace TediSouth
             bp.MaPhuLuc = tbmaphuluc.Text;
             bp.MaHopDong = cbmahopdong.SelectedValue.ToString();
             bp.NgayLap = Convert.ToDateTime(dtNgayLap.Value.ToString());
-            bp.NoiDung = "D:/hồsơtổnghợp/HDDuAn/" + open.SafeFileName;
+            bp.NoiDung = "D:/hồsơtổnghợp/HDDuAn/PhuLuc" + open.SafeFileName;
             string sourcefolder = linkFile.Text;
-            string destfolder = "D:/hồsơtổnghợp/HDDuAn";
+            string destfolder = "D:/hồsơtổnghợp/HDDuAn/PhuLuc";
             CoppyFile(sourcefolder, destfolder);
             if (PhuLuc_BUS.Update(bp) == true)
             {
@@ -134,7 +140,7 @@ namespace TediSouth
                 bp.MaPhuLuc = tbmaphuluc.Text;
                 bp.MaHopDong = cbmahopdong.SelectedValue.ToString();
                 bp.NgayLap = Convert.ToDateTime(dtNgayLap.Value.ToString());
-                bp.NoiDung = "D:/hồsơtổnghợp/HDDuAn/" + open.SafeFileName;
+                bp.NoiDung = "D:/hồsơtổnghợp/HDDuAn/PhuLuc" + open.SafeFileName;
                 if (PhuLuc_BUS.KiemTra(tbmaphuluc.Text) == false)
                 {
                     PhuLuc_BUS.Insert(bp);
@@ -155,26 +161,88 @@ namespace TediSouth
             linkFile.Text = "No File Select.";
             cbmahopdong.Text = null;
             tbmaphuluc.Clear();
-            tbTimKiem.Clear();
-
+            tbTimKiem.Text = "Vui lòng nhập thông tin để tìm kiếm...";
         }
         public void LoadDGV()
         {
             DataTable dt = new DataTable();
-            dt = new DataTable();
-            dt = PhuLuc_BUS.LoadPhuLuc();
-            dgvhopDong.DataSource = dt;
+            if (ID == "admin")
+            {
+                dt = PhuLuc_BUS.LoadPL();
+            }
+            else
+            {
+                dt = PhuLuc_BUS.LoadPL_ID(ID);
+            }
+            dgvPhuLucHopDong.DataSource = dt;
 
-            dgvhopDong.Columns["MaHopDong"].HeaderText = "Hợp Đồng";
-            dgvhopDong.Columns["MaPhuLuc"].HeaderText = "Phụ Lục";
-            dgvhopDong.Columns["NgayLap"].HeaderText = "Ngày Lập";
-            dgvhopDong.Columns["NoiDung"].HeaderText = "Nội Dung";
+            dgvPhuLucHopDong.Columns["MaHopDong"].HeaderText = "Hợp Đồng";
+            dgvPhuLucHopDong.Columns["MaPhuLuc"].HeaderText = "Phụ Lục";
+            dgvPhuLucHopDong.Columns["NgayLap"].HeaderText = "Ngày Lập";
+            dgvPhuLucHopDong.Columns["NoiDung"].HeaderText = "Nội Dung";
         }
-        public void LoadCbDuAn()
+        public void LoadCbHopDong()
         {
-            cbmahopdong.DataSource = DBConnect.TaoBang("Select * from HopDong");
-            cbmahopdong.DisplayMember = "MaHopDong";
+            if (ID == "admin")
+            {
+                cbmahopdong.DataSource = DBConnect.TaoBang("select * from HopDong");
+            }
+            else
+            {
+                cbmahopdong.DataSource = DBConnect.TaoBang("select a.* from HopDong a, HopDongGiaoKhoan b where a.MaHopDong=b.MaHopDong and MaDonVi=(select MaDonVi from NhanVien where IDNhanVien='" + ID + "')");
+            }
+            cbmahopdong.DisplayMember = "MaDuAn";
             cbmahopdong.ValueMember = "MaHopDong";
+        }
+
+        private void tbTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            if (tbTimKiem.Text == "")
+            {
+                dt = null;
+            }
+            else
+            {
+                if (ID == "admin")
+                {
+                    dt = PhuLuc_BUS.LoadTimKiemAdmin(tbTimKiem.Text);
+                }
+                else
+                {
+                    dt = PhuLuc_BUS.LoadTimKiemTheoID(ID, tbTimKiem.Text);
+                }
+                dgvPhuLucHopDong.DataSource = dt;
+            }
+        }
+
+        private void linkFile_Click(object sender, EventArgs e)
+        {
+            string txt = linkFile.Text;
+            try
+            {
+                System.Diagnostics.Process.Start(txt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvPhuLucHopDong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow dr = dgvPhuLucHopDong.SelectedRows[0];
+                tbmaphuluc.Text = dr.Cells["MaPhuLuc"].Value.ToString();
+                dtNgayLap.Text = dr.Cells["NgayLap"].Value.ToString();
+                cbmahopdong.SelectedValue = dr.Cells["MaHopDong"].Value.ToString();
+                linkFile.Text = dr.Cells["NoiDung"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

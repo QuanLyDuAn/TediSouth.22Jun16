@@ -31,10 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPhuLuc));
             this.cbmahopdong = new System.Windows.Forms.ComboBox();
             this.linkFile = new System.Windows.Forms.LinkLabel();
-            this.dgvhopDong = new System.Windows.Forms.DataGridView();
+            this.dgvPhuLucHopDong = new System.Windows.Forms.DataGridView();
             this.tbmaphuluc = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.tbTimKiem = new System.Windows.Forms.TextBox();
             this.dtNgayLap = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,7 +45,7 @@
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvhopDong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhuLucHopDong)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +53,7 @@
             // 
             this.cbmahopdong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbmahopdong.FormattingEnabled = true;
-            this.cbmahopdong.Location = new System.Drawing.Point(172, 98);
+            this.cbmahopdong.Location = new System.Drawing.Point(398, 87);
             this.cbmahopdong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbmahopdong.Name = "cbmahopdong";
             this.cbmahopdong.Size = new System.Drawing.Size(244, 24);
@@ -65,35 +64,37 @@
             this.linkFile.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.linkFile.AutoSize = true;
             this.linkFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkFile.Location = new System.Drawing.Point(579, 53);
+            this.linkFile.Location = new System.Drawing.Point(805, 42);
             this.linkFile.Name = "linkFile";
             this.linkFile.Size = new System.Drawing.Size(118, 20);
             this.linkFile.TabIndex = 92;
             this.linkFile.TabStop = true;
             this.linkFile.Text = "No File Select.";
+            this.linkFile.Click += new System.EventHandler(this.linkFile_Click);
             // 
-            // dgvhopDong
+            // dgvPhuLucHopDong
             // 
-            this.dgvhopDong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvPhuLucHopDong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvhopDong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvhopDong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvhopDong.Location = new System.Drawing.Point(43, 282);
-            this.dgvhopDong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgvhopDong.Name = "dgvhopDong";
-            this.dgvhopDong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvhopDong.Size = new System.Drawing.Size(1355, 222);
-            this.dgvhopDong.TabIndex = 89;
-            this.dgvhopDong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvhopDong_CellContentClick);
+            this.dgvPhuLucHopDong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPhuLucHopDong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhuLucHopDong.Location = new System.Drawing.Point(43, 282);
+            this.dgvPhuLucHopDong.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPhuLucHopDong.Name = "dgvPhuLucHopDong";
+            this.dgvPhuLucHopDong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPhuLucHopDong.Size = new System.Drawing.Size(1355, 222);
+            this.dgvPhuLucHopDong.TabIndex = 89;
+            this.dgvPhuLucHopDong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvhopDong_CellContentClick);
+            this.dgvPhuLucHopDong.Click += new System.EventHandler(this.dgvPhuLucHopDong_Click);
             // 
             // tbmaphuluc
             // 
             this.tbmaphuluc.AcceptsReturn = true;
             this.tbmaphuluc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbmaphuluc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbmaphuluc.Location = new System.Drawing.Point(172, 53);
-            this.tbmaphuluc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbmaphuluc.Location = new System.Drawing.Point(398, 42);
+            this.tbmaphuluc.Margin = new System.Windows.Forms.Padding(4);
             this.tbmaphuluc.Name = "tbmaphuluc";
             this.tbmaphuluc.Size = new System.Drawing.Size(244, 26);
             this.tbmaphuluc.TabIndex = 76;
@@ -101,52 +102,38 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.Controls.Add(this.btnTimKiem);
             this.groupBox1.Controls.Add(this.tbTimKiem);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox1.Location = new System.Drawing.Point(967, 87);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(963, 76);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(435, 160);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(435, 85);
             this.groupBox1.TabIndex = 90;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTimKiem.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Appearance.Options.UseFont = true;
-            this.btnTimKiem.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
-            this.btnTimKiem.Location = new System.Drawing.Point(141, 100);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(156, 42);
-            this.btnTimKiem.TabIndex = 16;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.ToolTip = "(none)";
             // 
             // tbTimKiem
             // 
             this.tbTimKiem.AcceptsReturn = true;
             this.tbTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTimKiem.Location = new System.Drawing.Point(93, 44);
-            this.tbTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTimKiem.Location = new System.Drawing.Point(8, 37);
+            this.tbTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.tbTimKiem.Name = "tbTimKiem";
-            this.tbTimKiem.Size = new System.Drawing.Size(256, 26);
+            this.tbTimKiem.Size = new System.Drawing.Size(419, 28);
             this.tbTimKiem.TabIndex = 11;
+            this.tbTimKiem.Text = "Vui lòng nhập thông tin để tìm kiếm...";
+            this.tbTimKiem.TextChanged += new System.EventHandler(this.tbTimKiem_TextChanged);
             // 
             // dtNgayLap
             // 
             this.dtNgayLap.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtNgayLap.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayLap.Location = new System.Drawing.Point(172, 150);
-            this.dtNgayLap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtNgayLap.Location = new System.Drawing.Point(398, 139);
+            this.dtNgayLap.Margin = new System.Windows.Forms.Padding(4);
             this.dtNgayLap.Name = "dtNgayLap";
             this.dtNgayLap.Size = new System.Drawing.Size(244, 22);
             this.dtNgayLap.TabIndex = 78;
@@ -156,7 +143,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(41, 150);
+            this.label6.Location = new System.Drawing.Point(267, 139);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(94, 20);
@@ -168,7 +155,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(479, 53);
+            this.label4.Location = new System.Drawing.Point(705, 42);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 20);
@@ -180,7 +167,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(59, 57);
+            this.label2.Location = new System.Drawing.Point(285, 46);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 20);
@@ -192,7 +179,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 100);
+            this.label3.Location = new System.Drawing.Point(265, 89);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 20);
@@ -206,8 +193,8 @@
             this.btnDuyetFile.Appearance.Options.UseFont = true;
             this.btnDuyetFile.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnDuyetFile.Image = ((System.Drawing.Image)(resources.GetObject("btnDuyetFile.Image")));
-            this.btnDuyetFile.Location = new System.Drawing.Point(483, 87);
-            this.btnDuyetFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDuyetFile.Location = new System.Drawing.Point(709, 76);
+            this.btnDuyetFile.Margin = new System.Windows.Forms.Padding(4);
             this.btnDuyetFile.Name = "btnDuyetFile";
             this.btnDuyetFile.Size = new System.Drawing.Size(156, 31);
             this.btnDuyetFile.TabIndex = 79;
@@ -221,8 +208,8 @@
             this.btnReset.Appearance.Options.UseFont = true;
             this.btnReset.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
-            this.btnReset.Location = new System.Drawing.Point(788, 206);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReset.Location = new System.Drawing.Point(991, 219);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(156, 42);
             this.btnReset.TabIndex = 88;
@@ -236,8 +223,8 @@
             this.btnXoa.Appearance.Options.UseFont = true;
             this.btnXoa.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(561, 206);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoa.Location = new System.Drawing.Point(764, 219);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(144, 42);
             this.btnXoa.TabIndex = 87;
@@ -251,8 +238,8 @@
             this.btnLuu.Appearance.Options.UseFont = true;
             this.btnLuu.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.Location = new System.Drawing.Point(332, 206);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuu.Location = new System.Drawing.Point(535, 219);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(155, 42);
             this.btnLuu.TabIndex = 86;
@@ -268,8 +255,8 @@
             this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnThem.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.Location = new System.Drawing.Point(104, 206);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThem.Location = new System.Drawing.Point(307, 219);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(159, 42);
             this.btnThem.TabIndex = 85;
@@ -283,7 +270,7 @@
             this.ClientSize = new System.Drawing.Size(1441, 518);
             this.Controls.Add(this.cbmahopdong);
             this.Controls.Add(this.linkFile);
-            this.Controls.Add(this.dgvhopDong);
+            this.Controls.Add(this.dgvPhuLucHopDong);
             this.Controls.Add(this.tbmaphuluc);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDuyetFile);
@@ -296,10 +283,11 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPhuLuc";
             this.Text = "PHỤ LỤC HỢP ĐỒNG";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvhopDong)).EndInit();
+            this.Load += new System.EventHandler(this.FrmPhuLuc_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhuLucHopDong)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -308,11 +296,9 @@
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.SimpleButton btnTimKiem;
         private System.Windows.Forms.ComboBox cbmahopdong;
         private System.Windows.Forms.LinkLabel linkFile;
-        private System.Windows.Forms.DataGridView dgvhopDong;
+        private System.Windows.Forms.DataGridView dgvPhuLucHopDong;
         private System.Windows.Forms.TextBox tbmaphuluc;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tbTimKiem;

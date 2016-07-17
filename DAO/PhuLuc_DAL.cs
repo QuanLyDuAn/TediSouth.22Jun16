@@ -38,7 +38,11 @@ namespace DAL
             DongKetNoi(con);
             return listHopDong;
         }
-
+        public static DataTable LoadPL_ID(string ID)
+        {
+            string sTruyVan = "select a.* from PhuLuc a, HopDongGiaoKhoan b where a.MaHopDong=b.MaHopDong  and b.MaDonVi=(select MaDonVi from NhanVien where IDNhanVien='" + ID + "') order by MaPhuLuc";
+            return TaoBang(sTruyVan);
+        }
         public static bool Insert(PhuLuc phuluc)
         {
             string Insert = string.Format(@"Insert into PhuLuc(MaPhuLuc,MaHopDong,NgayLap,NoiDung) Values (N'{0}',N'{1}',N'{2}',N'{3}')",phuluc.MaPhuLuc,phuluc.MaHopDong,phuluc.NgayLap,phuluc.NoiDung);
@@ -92,6 +96,16 @@ namespace DAL
         public static DataTable LoadPL()
         {
             string sTruyVan = "Select * from PhuLuc";
+            return TaoBang(sTruyVan);
+        }
+        public static DataTable LoadTimKiemTheoID(string ID, string sTimKiem)
+        {
+            string sTruyVan = "select a.* from PhuLuc a,HopDongGiaoKhoan b where (MaPhuLuc like '%" + sTimKiem + "%' or a.MaHopDong like '%" + sTimKiem + "%' ) and MaDonVi=(select MaDonVi from NhanVien where IDNhanVien='" + ID+"') and a.MaHopDong=b.MaHopDong";
+            return TaoBang(sTruyVan);
+        }
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            string sTruyVan = "select * from PhuLuc where MaPhuLuc like '%" + sTimKiem + "%' or MaHopDong like '%" + sTimKiem + "%'";
             return TaoBang(sTruyVan);
         }
     }

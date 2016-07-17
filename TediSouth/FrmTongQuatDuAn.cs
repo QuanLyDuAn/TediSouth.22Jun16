@@ -30,8 +30,7 @@ namespace TediSouth
 
         private void tbDuAn_TextChanged_1(object sender, EventArgs e)
         {
-            MacDinh();
-
+            //MacDinh();
             DataTable dt = new DataTable();
             gird.DataSource = dt;
 
@@ -73,7 +72,10 @@ namespace TediSouth
                     MessageBox.Show("Không có dự án này", "Thông Báo");
                 }
                 else
+                {
                     Mo();
+                    simpleButton1.PerformClick();
+                }
             }
         }
 
@@ -101,11 +103,18 @@ namespace TediSouth
             string hopdong = string.Format("select * from HopDong where maduan=(select maduan from Duan where tenduan like N'%{0}%')", tbDuAn.Text);
             DataTable hd = DBConnect.TaoBang(hopdong);
             gird.DataSource = hd;
-            gird.Columns["MaHopDong"].HeaderText = "Hợp Đồng";
-            gird.Columns["MaDuAn"].HeaderText = "Dự Án";
-            gird.Columns["NgayLapHD"].HeaderText = "Ngày Lập";
-            gird.Columns["NgayKyHD"].HeaderText = "Ngày Ký";
-            gird.Columns["NoiDungHopDong"].HeaderText = "Nội Dung";
+            try
+            {
+                gird.Columns["MaHopDong"].HeaderText = "Hợp Đồng";
+                gird.Columns["MaDuAn"].HeaderText = "Dự Án";
+                gird.Columns["NgayLapHD"].HeaderText = "Ngày Lập";
+                gird.Columns["NgayKyHD"].HeaderText = "Ngày Ký";
+                gird.Columns["NoiDungHopDong"].HeaderText = "Nội Dung";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui Lòng Chỉ Chọn 1 Dự Án","Thông Báo");
+            }
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -113,15 +122,22 @@ namespace TediSouth
             string hdgk = string.Format("select * from HopDongGiaoKhoan where mahopdong=(select mahopdong from hopdong where maduan=(select maduan from Duan where tenduan like N'%{0}%' ))", tbDuAn.Text);
             DataTable giaokhoan = DBConnect.TaoBang(hdgk);
             gird.DataSource = giaokhoan;
-            gird.Columns["MaHopDong"].HeaderText = "Mã Hợp Đồng";
-            gird.Columns["MaHopDongGK"].HeaderText = "Mã Hợp Đồng GK";
-            gird.Columns["MaDonVi"].HeaderText = "Mã Đơn Vị";
-            gird.Columns["MaDuAn"].HeaderText = "Mã Dự Án";
-            gird.Columns["NgayLapHDGK"].HeaderText = "Ngày Lập HĐGK";
-            gird.Columns["NgayKyDuyetHDGK"].HeaderText = "Ngày Ký Duyệt HĐGK";
-            gird.Columns["KinhPhi"].DefaultCellStyle.Format = "#,#" + " VNĐ";
-            //gird.Columns["KinhPhi"].HeaderText = "Kinh Phí";
-            gird.Columns["NoiDungHopDongGK"].HeaderText = " Nội Dung Hợp Đồng";
+            try
+            {
+                gird.Columns["MaHopDong"].HeaderText = "Mã Hợp Đồng";
+                gird.Columns["MaHopDongGK"].HeaderText = "Mã Hợp Đồng GK";
+                gird.Columns["MaDonVi"].HeaderText = "Mã Đơn Vị";
+                gird.Columns["MaDuAn"].HeaderText = "Mã Dự Án";
+                gird.Columns["NgayLapHDGK"].HeaderText = "Ngày Lập HĐGK";
+                gird.Columns["NgayKyDuyetHDGK"].HeaderText = "Ngày Ký Duyệt HĐGK";
+                gird.Columns["KinhPhi"].DefaultCellStyle.Format = "#,#" + " VNĐ";
+                //gird.Columns["KinhPhi"].HeaderText = "Kinh Phí";
+                gird.Columns["NoiDungHopDongGK"].HeaderText = " Nội Dung Hợp Đồng";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui Lòng Chỉ Chọn 1 Dự Án", "Thông Báo");
+            }
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)
@@ -129,9 +145,16 @@ namespace TediSouth
             string dieuhanh = string.Format("select * from Chi_Tiet_Dieu_Hanh where qddieuhanh=(select qddieuhanh from qddieuhanhduan where maduan=(select maduan from Duan where tenduan like N'%{0}%' ))", tbDuAn.Text);
             DataTable dh = DBConnect.TaoBang(dieuhanh);
             gird.DataSource = dh;
-            gird.Columns["QDDieuHanh"].HeaderText = "Mã Quyết Định";
-            gird.Columns["IDNhanVien"].HeaderText = "Mã Nhân Viên";
-            gird.Columns["ViTriPhanCong"].HeaderText = "Vị Trí Phân Công";
+            try
+            {
+                gird.Columns["QDDieuHanh"].HeaderText = "Mã Quyết Định";
+                gird.Columns["IDNhanVien"].HeaderText = "Mã Nhân Viên";
+                gird.Columns["ViTriPhanCong"].HeaderText = "Vị Trí Phân Công";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui Lòng Chỉ Chọn 1 Dự Án", "Thông Báo");
+            }
         }
 
         private void simpleButton5_Click(object sender, EventArgs e)
@@ -139,13 +162,20 @@ namespace TediSouth
             string congvan = string.Format("select * from CongVan where maduan=(select maduan from Duan where tenduan like N'%{0}%' )", tbDuAn.Text);
             DataTable cv = DBConnect.TaoBang(congvan);
             gird.DataSource = cv;
-            gird.Columns["MaCongVan"].HeaderText = "Mã Công Văn";
-            gird.Columns["MaDuAn"].HeaderText = "Mã Dự Án";
-            gird.Columns["IDNhanVien"].HeaderText = "ID Nhân Viên";
-            gird.Columns["TieuDe"].HeaderText = "Tiêu Đề";
-            gird.Columns["NgayLapCV"].HeaderText = "Ngày Lập Công Văn";
-            gird.Columns["NoiDung"].HeaderText = "Nội Dung";
-            gird.Columns["LoaiCV"].HeaderText = "Loại Công Văn";
+            try
+            {
+                gird.Columns["MaCongVan"].HeaderText = "Mã Công Văn";
+                gird.Columns["MaDuAn"].HeaderText = "Mã Dự Án";
+                gird.Columns["IDNhanVien"].HeaderText = "ID Nhân Viên";
+                gird.Columns["TieuDe"].HeaderText = "Tiêu Đề";
+                gird.Columns["NgayLapCV"].HeaderText = "Ngày Lập Công Văn";
+                gird.Columns["NoiDung"].HeaderText = "Nội Dung";
+                gird.Columns["LoaiCV"].HeaderText = "Loại Công Văn";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui Lòng Chỉ Chọn 1 Dự Án", "Thông Báo");
+            }
         }
 
         private void simpleButton6_Click(object sender, EventArgs e)
@@ -153,14 +183,21 @@ namespace TediSouth
             string sanpham = string.Format("select * from Phieugiaosanpham where maduan=(select maduan from Duan where tenduan like N'%{0}%' )", tbDuAn.Text);
             DataTable sp = DBConnect.TaoBang(sanpham);
             gird.DataSource = sp;
-            gird.Columns["IDPhieuGiao"].HeaderText = "Mã Phiếu Giao";
-            gird.Columns["MaDuAn"].HeaderText = "Mã Dự Án";
-            gird.Columns["IDNhanVien"].HeaderText = "Mã Nhân Viên";
-            gird.Columns["TieuDe"].HeaderText = "Tiêu Đề";
-            gird.Columns["NoiDungPhieuGiao"].HeaderText = "Nội Dung";
-            gird.Columns["NgayLap"].HeaderText = "Ngày Lập";
-            gird.Columns["SoLuong"].HeaderText = "Số Lượng";
-            gird.Columns["DuyetHoSo"].HeaderText = "Đã Duyệt";
+            try
+            {
+                gird.Columns["IDPhieuGiao"].HeaderText = "Mã Phiếu Giao";
+                gird.Columns["MaDuAn"].HeaderText = "Mã Dự Án";
+                gird.Columns["IDNhanVien"].HeaderText = "Mã Nhân Viên";
+                gird.Columns["TieuDe"].HeaderText = "Tiêu Đề";
+                gird.Columns["NoiDungPhieuGiao"].HeaderText = "Nội Dung";
+                gird.Columns["NgayLap"].HeaderText = "Ngày Lập";
+                gird.Columns["SoLuong"].HeaderText = "Số Lượng";
+                gird.Columns["DuyetHoSo"].HeaderText = "Đã Duyệt";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui Lòng Chỉ Chọn 1 Dự Án", "Thông Báo");
+            }
         }
         private void AutoTenK()
         {
@@ -179,14 +216,24 @@ namespace TediSouth
                     MyCollection.Add(reader.GetString(0));
                 }
                 tbDuAn.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                tbDuAn.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 tbDuAn.AutoCompleteCustomSource = MyCollection;
-                
+                tbDuAn.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 con.Close();
             }
 
         }
 
-        
+        private void gird_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow dr = gird.SelectedRows[0];
+                tbDuAn.Text= dr.Cells["TenDuAn"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }

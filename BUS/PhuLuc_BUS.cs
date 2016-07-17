@@ -12,9 +12,13 @@ namespace BUS
     public class PhuLuc_BUS:DBConnect
     {
 
-        public static DataTable LoadPhuLuc()
+        public static DataTable LoadPL()
         {
             return PhuLuc_DAL.LoadPL();
+        }
+        public static DataTable LoadPL_ID(string ID)
+        {
+            return PhuLuc_DAL.LoadPL_ID(ID);
         }
         public static bool Insert(PhuLuc bp)
         {
@@ -41,6 +45,14 @@ namespace BUS
                 return true;
             else
                 return false;
+        }
+        public static DataTable LoadTimKiemTheoID(string ID, string sTimKiem)
+        {
+            return PhuLuc_DAL.LoadTimKiemTheoID(ID, sTimKiem);
+        }
+        public static DataTable LoadTimKiemAdmin(string sTimKiem)
+        {
+            return PhuLuc_DAL.LoadTimKiemAdmin(sTimKiem);
         }
     }
 }

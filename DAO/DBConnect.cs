@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace DAL
 {
@@ -59,8 +60,16 @@ namespace DAL
             SqlConnection con = new SqlConnection(chuoiKetNoi);
             SqlDataAdapter da = new SqlDataAdapter(TruyVan, con);
             DataTable dt = new DataTable();
-            da.Fill(dt);
-            return dt;
+            try
+            {
+                da.Fill(dt);
+                return dt;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+            
         }
 
         public static bool KiemTraTonTai(string chuoi, string sTruyVan)
@@ -92,7 +101,7 @@ namespace DAL
             SqlDataReader dr = da.ExecuteReader();
             while (dr.Read())
             {
-                if (chuoi1 == dr.GetString(0)&& chuoi2==dr.GetString(1))
+                if (chuoi1 == dr.GetString(0) && chuoi2 == dr.GetString(1))
                 {
                     KT = true;
                     break;

@@ -313,6 +313,7 @@ namespace TediSouth
                     foreach (Form f in this.MdiChildren)
                         f.Close();
                     FrmPhuLuc dn = new FrmPhuLuc();
+                    dn.ID = MaNV;
                     dn.Name = "Phụ Lục Hợp Đồng";
                     dn.MdiParent = this;
                     dn.Show();
