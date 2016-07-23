@@ -71,13 +71,10 @@ namespace TediSouth
             dgvNhanVien.Columns["HinhAnh"].ValueType = typeof(Image);
             DataGridViewImageColumn dc = dgvNhanVien.Columns["HinhAnh"] as DataGridViewImageColumn;
             dc.ImageLayout = DataGridViewImageCellLayout.Zoom;
-<<<<<<< HEAD
         }
         public static Image resizeImage(Image imgToResize, Size size)
         {
             return (Image)(new Bitmap(imgToResize, size));
-=======
->>>>>>> origin/master
         }
         public void LoadDonVi()
         {
