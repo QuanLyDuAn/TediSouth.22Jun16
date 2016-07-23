@@ -50,7 +50,7 @@ namespace DAL
             try
             {
                 
-                string TruyVan = string.Format(@"Update NhanVien Set MaDonVi=@MaDonVi,MaBoPhan=@MaBoPhan,NgaySinh=@NgaySinh,HoTen=@HoTen,Email=@Email,DienThoaiNhanVien=@DienThoaiNhanVien,DiaChi=@DiaChi where IDNhanVien=@IDNhanVien");
+                string TruyVan = string.Format(@"Update NhanVien Set MaDonVi=@MaDonVi,MaBoPhan=@MaBoPhan,NgaySinh=@NgaySinh,HoTen=@HoTen,Email=@Email,DienThoaiNhanVien=@DienThoaiNhanVien,DiaChi=@DiaChi, HinhAnh=@HinhAnh where IDNhanVien=@IDNhanVien");
                 string ketnoi = "Data Source=./;Initial Catalog=QLDA_TediSouth;Integrated Security=True";
                 SqlConnection conn = new SqlConnection(ketnoi);
                 conn.Open();
@@ -63,7 +63,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@Email", nhanVien.Email);
                 cmd.Parameters.AddWithValue("@DienThoaiNhanVien", nhanVien.DienThoaiNhanVien);
                 cmd.Parameters.AddWithValue("@DiaChi", nhanVien.DiaChi);
-                
+                cmd.Parameters.AddWithValue("@HinhAnh", nhanVien.HinhAnh);
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 return true;
