@@ -28,6 +28,10 @@ namespace BUS
         {
             return NhanVien_DAL.Update(bp);
         }
+        public static bool UpdateKhongHinh(NhanVien bp)
+        {
+            return NhanVien_DAL.UpdateKhongHinh(bp);
+        }
         public static bool Delete(NhanVien bp)
         {
             return NhanVien_DAL.Delete(bp);

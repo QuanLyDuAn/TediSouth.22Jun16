@@ -50,7 +50,39 @@ namespace DAL
             try
             {
                 
+<<<<<<< HEAD
                 string TruyVan = string.Format(@"Update NhanVien Set MaDonVi=@MaDonVi,MaBoPhan=@MaBoPhan,NgaySinh=@NgaySinh,HoTen=@HoTen,Email=@Email,DienThoaiNhanVien=@DienThoaiNhanVien,DiaChi=@DiaChi, HinhAnh=@HinhAnh where IDNhanVien=@IDNhanVien");
+=======
+                string TruyVan = string.Format(@"Update NhanVien Set MaDonVi=@MaDonVi,MaBoPhan=@MaBoPhan,NgaySinh=@NgaySinh,HoTen=@HoTen,Email=@Email,DienThoaiNhanVien=@DienThoaiNhanVien,DiaChi=@DiaChi,HinhAnh=@HinhAnh where IDNhanVien=@IDNhanVien");
+                string ketnoi = "Data Source=./;Initial Catalog=QLDA_TediSouth;Integrated Security=True";
+                SqlConnection conn = new SqlConnection(ketnoi);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(TruyVan, conn);
+                cmd.Parameters.AddWithValue("@IDNhanVien", nhanVien.IDNhanVien);
+                cmd.Parameters.AddWithValue("@MaDonVi", nhanVien.MaDonVi);
+                cmd.Parameters.AddWithValue("@MaBoPhan", nhanVien.MaBoPhan);
+                cmd.Parameters.AddWithValue("@NgaySinh", nhanVien.NgaySinh);
+                cmd.Parameters.AddWithValue("@HoTen", nhanVien.HoTen);
+                cmd.Parameters.AddWithValue("@Email", nhanVien.Email);
+                cmd.Parameters.AddWithValue("@DienThoaiNhanVien", nhanVien.DienThoaiNhanVien);
+                cmd.Parameters.AddWithValue("@DiaChi", nhanVien.DiaChi);
+                cmd.Parameters.AddWithValue("@HinhAnh", nhanVien.HinhAnh);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public static bool UpdateKhongHinh(NhanVien nhanVien)
+        {
+            try
+            {
+
+                string TruyVan = string.Format(@"Update NhanVien Set MaDonVi=@MaDonVi,MaBoPhan=@MaBoPhan,NgaySinh=@NgaySinh,HoTen=@HoTen,Email=@Email,DienThoaiNhanVien=@DienThoaiNhanVien,DiaChi=@DiaChi where IDNhanVien=@IDNhanVien");
+>>>>>>> origin/master
                 string ketnoi = "Data Source=./;Initial Catalog=QLDA_TediSouth;Integrated Security=True";
                 SqlConnection conn = new SqlConnection(ketnoi);
                 conn.Open();

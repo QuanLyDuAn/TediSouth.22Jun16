@@ -58,6 +58,7 @@
             this.txtHinhAnhPath = new System.Windows.Forms.TextBox();
             this.cbBoPhan = new System.Windows.Forms.ComboBox();
             this.tbSDT1 = new System.Windows.Forms.MaskedTextBox();
+            this.bitHinhAnh = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHinhAnh)).BeginInit();
@@ -243,7 +244,12 @@
             this.pbHinhAnh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pbHinhAnh.Location = new System.Drawing.Point(401, 64);
             this.pbHinhAnh.Name = "pbHinhAnh";
+<<<<<<< HEAD
             this.pbHinhAnh.Size = new System.Drawing.Size(105, 143);
+=======
+            this.pbHinhAnh.Size = new System.Drawing.Size(140, 176);
+            this.pbHinhAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+>>>>>>> origin/master
             this.pbHinhAnh.TabIndex = 117;
             this.pbHinhAnh.TabStop = false;
             // 
@@ -390,13 +396,28 @@
             // 
             this.tbSDT1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbSDT1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.tbSDT1.Location = new System.Drawing.Point(127, 89);
             this.tbSDT1.Mask = "0000000000";
+=======
+            this.tbSDT1.Location = new System.Drawing.Point(169, 110);
+            this.tbSDT1.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> origin/master
             this.tbSDT1.Name = "tbSDT1";
             this.tbSDT1.Size = new System.Drawing.Size(184, 22);
             this.tbSDT1.TabIndex = 122;
-            this.tbSDT1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbSDT1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSDT1_KeyPress);
+            // 
+            // bitHinhAnh
+            // 
+            this.bitHinhAnh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bitHinhAnh.AutoSize = true;
+            this.bitHinhAnh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bitHinhAnh.Location = new System.Drawing.Point(881, 225);
+            this.bitHinhAnh.Name = "bitHinhAnh";
+            this.bitHinhAnh.Size = new System.Drawing.Size(0, 20);
+            this.bitHinhAnh.TabIndex = 121;
+            this.bitHinhAnh.Visible = false;
             // 
             // FrmNhanVien
             // 
@@ -404,6 +425,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 460);
             this.Controls.Add(this.tbSDT1);
+            this.Controls.Add(this.bitHinhAnh);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtHinhAnhPath);
             this.Controls.Add(this.dtngaysinh);
@@ -474,5 +496,6 @@
         private System.Windows.Forms.TextBox txtHinhAnhPath;
         private System.Windows.Forms.ComboBox cbBoPhan;
         private System.Windows.Forms.MaskedTextBox tbSDT1;
+        private System.Windows.Forms.Label bitHinhAnh;
     }
 }

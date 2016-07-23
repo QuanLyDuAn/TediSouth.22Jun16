@@ -17,11 +17,13 @@ namespace TediSouth
 {
     public partial class FrmNhanVien : Form
     {
+
         DataTable dt = new DataTable();
         SqlDataAdapter da = new SqlDataAdapter();
         public static string chuoiKetNoi = "Data Source=./;Initial Catalog=QLDA_TediSouth;Integrated Security=True";
         SqlConnection con = new SqlConnection(chuoiKetNoi);
         public string ID;
+        
         public FrmNhanVien()
         {
             InitializeComponent();
@@ -43,6 +45,7 @@ namespace TediSouth
             tbSDT1.Clear();
             tbTimKiem.Text = "Nhập ID hoặc tên nhân viên để tìm kiếm...";
             pbHinhAnh.Image = null;
+            txtHinhAnhPath.Clear();
         }
         public void LoadDGV()
         {
@@ -68,10 +71,13 @@ namespace TediSouth
             dgvNhanVien.Columns["HinhAnh"].ValueType = typeof(Image);
             DataGridViewImageColumn dc = dgvNhanVien.Columns["HinhAnh"] as DataGridViewImageColumn;
             dc.ImageLayout = DataGridViewImageCellLayout.Zoom;
+<<<<<<< HEAD
         }
         public static Image resizeImage(Image imgToResize, Size size)
         {
             return (Image)(new Bitmap(imgToResize, size));
+=======
+>>>>>>> origin/master
         }
         public void LoadDonVi()
         {
@@ -103,33 +109,40 @@ namespace TediSouth
 
         private void click_Add(object sender, EventArgs e)
         {
-            if (tbEmail.Text == "" || tbDiaChi.Text == "" || tbhoten.Text == "" || tbmanv.Text == "" || tbSDT1.Text == "" || txtHinhAnhPath.Text == "")
+            try
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu", "Thông báo");
-                return;
-            }
-            else
-            {
-                NhanVien nv = new NhanVien();
-                nv.IDNhanVien = tbmanv.Text;
-                nv.MaDonVi = cbdonvi.SelectedValue.ToString();
-                nv.MaBoPhan = cbBoPhan.SelectedValue.ToString();
-                nv.NgaySinh = DateTime.Parse(dtngaysinh.Text);
-                nv.HoTen = tbhoten.Text;
-                nv.Email = tbDiaChi.Text;
-                nv.DienThoaiNhanVien = tbSDT1.Text;
-                nv.DiaChi = tbEmail.Text;
-                nv.HinhAnh = ConvertToByte();
-                if (NhanVien_BUS.KiemTra(tbmanv.Text) == false)
+                if (tbEmail.Text == "" || tbDiaChi.Text == "" || tbhoten.Text == "" || tbmanv.Text == "" || tbSDT1.Text == "" || txtHinhAnhPath.Text == "")
                 {
-                    NhanVien_BUS.Insert(nv);
-                    MessageBox.Show("Thêm Thành Công", "Thông Báo");
-                    LoadDGV();
-                    Reload();
+                    MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu", "Thông báo");
                     return;
                 }
                 else
-                    MessageBox.Show("Trùng lắp dữ liệu", "Thông Báo");
+                {
+                    NhanVien nv = new NhanVien();
+                    nv.IDNhanVien = tbmanv.Text;
+                    nv.MaDonVi = cbdonvi.SelectedValue.ToString();
+                    nv.MaBoPhan = cbBoPhan.SelectedValue.ToString();
+                    nv.NgaySinh = DateTime.Parse(dtngaysinh.Text);
+                    nv.HoTen = tbhoten.Text;
+                    nv.Email = tbDiaChi.Text;
+                    nv.DienThoaiNhanVien = tbSDT1.Text;
+                    nv.DiaChi = tbEmail.Text;
+                    nv.HinhAnh = ConvertToByte();
+                    if (NhanVien_BUS.KiemTra(tbmanv.Text) == false)
+                    {
+                        NhanVien_BUS.Insert(nv);
+                        MessageBox.Show("Thêm Thành Công", "Thông Báo");
+                        LoadDGV();
+                        Reload();
+                        return;
+                    }
+                    else
+                        MessageBox.Show("Trùng lắp dữ liệu", "Thông Báo");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Thêm Thất Bại", "Thông Báo");
             }
         }
         private byte[] ConvertToByte()
@@ -161,7 +174,8 @@ namespace TediSouth
 
             if (txtHinhAnhPath.Text == "")
             {
-                if (NhanVien_BUS.Update(nv) == true)
+                
+                if (NhanVien_BUS.UpdateKhongHinh(nv) == true)
                 {
                     MessageBox.Show("Cập Nhật Thành Công", "Thông Báo");
                     LoadDGV();
@@ -181,6 +195,7 @@ namespace TediSouth
                     return;
                 }
                 MessageBox.Show("Cập Nhật Thất Bại", "Thông Báo");
+
             }
         }
 
@@ -257,6 +272,7 @@ namespace TediSouth
                 tbDiaChi.Text = dr.Cells["Email"].Value.ToString();
                 tbSDT1.Text = dr.Cells["DienThoaiNhanVien"].Value.ToString();
                 tbEmail.Text = dr.Cells["DiaChi"].Value.ToString();
+                
                 //Convert hình ảnh đổ vào picBox
                 ImageConverter objImageConverter = new ImageConverter();
                 try
@@ -280,12 +296,12 @@ namespace TediSouth
 
         private void QDChucVu_Click(object sender, EventArgs e)
         {
-            if(tbmanv.Text=="")
+            if (tbmanv.Text == "")
             {
                 MessageBox.Show("Chưa chọn nhân viên", "Thông báo");
             }
             else
-            { 
+            {
                 FrmChucVuNhanVien fm = new FrmChucVuNhanVien();
                 fm.Sender(tbmanv.Text);
                 fm.Show();
