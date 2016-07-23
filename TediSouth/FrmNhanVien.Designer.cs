@@ -397,6 +397,7 @@
             this.tbSDT1.Name = "tbSDT1";
             this.tbSDT1.Size = new System.Drawing.Size(184, 22);
             this.tbSDT1.TabIndex = 122;
+            this.tbSDT1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbSDT1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSDT1_KeyPress);
             // 
             // bitHinhAnh
